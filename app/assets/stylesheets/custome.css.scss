@@ -1,0 +1,23 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
+
+$primary-color-light: #50a4e2;
+
+.navbar {
+  background-color: $primary-color-light;
+}
+
+#logo {
+  color: white;
+  padding: 1.5rem 0 1.5rem 1.5rem;
+}
+
+.center-form {
+  margin: auto;
+  max-width: 500px;
+}
+
+.center-txt {
+  text-align: center;
+}

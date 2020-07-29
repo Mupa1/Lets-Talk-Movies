@@ -1,0 +1,29 @@
+<nav class="nav navbar">
+  <i class="fab fa-twitter fa-lg" id="logo"></i>
+</nav>
+<h1 class="center-txt">Twitter Sign Up</h1>
+<div class="center-form">
+  <%= form_for(@user, :html => {class: "form-vertical", role: "form"}) do |f| %>
+    <div class="form-group ">
+      <div class="control-label">
+        <%= f.label :Username %>
+      </div>
+      <div>
+        <%= f.text_field :Username, class: "form-control", placeholder: "Enter username", autofocus: true %>
+      </div>
+    </div>
+    <div class="form-group ">
+      <div class="control-label">
+        <%= f.label :Fullname %><br>
+      </div>
+      <div>
+        <%= f.text_field :Fullname, class: "form-control", placeholder: "Enter fullname" %>
+      </div>
+    </div>
+    <div class="form-group ">
+      <div>
+        <%= f.submit "Sign Up",  class: "btn btn-primary signup-btn"%> 
+      </div>
+    </div>
+  <% end %>
+</div>
