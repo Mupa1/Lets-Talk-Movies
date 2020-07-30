@@ -3,7 +3,7 @@
   <div class="twitter-logo">
       <i class="fab fa-twitter fa-3x"></i>
   </div>
-  <h1 class="center-txt">Create Twitter Account</h1>
+  <h1>Create Twitter Account</h1>
 </div>
 <div class="center-form">
 <%= form_for (@user), :url => users_path, :html => {class: "signup-form"} do |f| %>
@@ -23,4 +23,7 @@
     <%= f.submit "Sign Up",  class: "btn btn-primary signup-btn"%>    
   </div>
 <% end %>
+<div class="text-center">
+  <%= link_to "Login in to Twitter", login_path %>
+</div>
 </div>
