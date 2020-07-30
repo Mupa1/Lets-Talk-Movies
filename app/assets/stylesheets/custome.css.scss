@@ -4,8 +4,18 @@
 
 $primary-color-light: #50a4e2;
 
-.navbar {
-  background-color: $primary-color-light;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f5f6f8;
+  font-family: "Roboto", sans-serif;
+}
+
+input {
+  background-color: #fff;
 }
 
 #logo {
@@ -14,10 +24,46 @@ $primary-color-light: #50a4e2;
 }
 
 .center-form {
-  margin: auto;
   max-width: 500px;
+  margin: auto;
 }
 
-.center-txt {
-  text-align: center;
+.signup-form {
+  padding: 1rem;
+}
+
+.twitter-logo {
+  color: $primary-color-light;
+  padding-top: 3rem;
+}
+
+.signup-btn {
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: $primary-color-light;
+  padding: 1.5rem;
+  font-weight: bolder;
+}
+
+.username-label,
+.fullname-label {
+  background-color: #fff;
+  width: 100%;
+  margin-bottom: 0;
+  color: #7c7786;
+}
+
+.username-input,
+.fullname-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid $primary-color-light;
+  height: 4rem;
+  margin-bottom: 2.5rem;
+  padding-left: 0.4rem;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 2px solid $primary-color-light;
 }
