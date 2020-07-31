@@ -28,7 +28,19 @@
           <div class="tweet-content">
             <h4><%= opinion.Author.Fullname.upcase %></h4>
             <span><%= sanitize opinion.Text %></span>
-              
+              <span class="like">
+                <% if opinion.likes.any? { |like| like.UserId == current_user.id }%>
+                  <%= link_to unlike_path(opinion), method: :delete do %>
+                    <i class="fas fa-heart text-danger"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to like_path(opinion) do %>
+                    <i class="fas fa-heart"></i>
+                  <% end %>
+                <% end %>
+                <% if opinion.likes.any? %>
+                  <p><%= "#{pluralize(opinion.likes.size, 'like')}" %></p>
+                <% end %>
             </span>
           </div>
           <div class="clear"></div>
