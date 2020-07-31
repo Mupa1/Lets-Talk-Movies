@@ -1,12 +1,6 @@
 <div class="side-nav">
   <div class="current-user">
-    <div class="picture">
-      <% if current_user[:Photo].nil? %>
-        <%= gravatar_for current_user, size: 50 %>
-      <% else %>
-        <%= cl_image_tag(current_user.Photo.url, :crop => :fill, :width => 50, :height => 50) %>
-      <% end %>           
-    </div>
+    <div class="picture"><%= profile_pic %></div>
     <h6><%= current_user.Fullname.upcase %></h6>
   </div>
   

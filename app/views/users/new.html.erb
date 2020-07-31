@@ -6,7 +6,7 @@
   <h1>Create Twitter Account</h1>
 </div>
 <div class="center-form">
-<%= form_for (@user), :url => users_path, :html => {class: "signup-form"} do |f| %>
+<%= form_for (@user), :url => users_path, :html => {class: "signup-form", multipart: true} do |f| %>
   <div class="form-label">
     <%= f.label :Username, class: "username-label" %>
   </div>
@@ -23,13 +23,13 @@
     <%= f.label :Photo, class: "photo-label" %>
   </div>
   <div class="form-input">
-    <%= f.file_field :Photo, class: "photo-input text-center", direct_upload: true %>
+    <%= f.file_field :Photo, class: "photo-input text-center" %>
   </div>
   <div class="form-label">
     <%= f.label :CoverImage, class: "cover-label" %>
   </div>
   <div class="form-input">
-    <%= f.file_field :CoverImage, class: "cover-input text-center" , direct_upload: true%>
+    <%= f.file_field :CoverImage, class: "cover-input text-center" %>
   </div>
   <div class="form-actions">
     <%= f.submit "Sign Up",  class: "btn btn-primary signup-btn"%>    

@@ -27,7 +27,7 @@ li {
   display: flex;
   justify-content: space-between;
   background-color: $primary-color-light;
-  height: 5rem;
+  height: 6rem;
 
   ul {
     display: flex;
@@ -35,7 +35,7 @@ li {
   }
 
   li {
-    padding: 1.5rem;
+    padding: 2rem;
   }
 
   i {
@@ -87,10 +87,8 @@ li {
   }
 }
 
-#logo {
-  color: white;
-  padding: 1.5rem 0 1.5rem 1.5rem;
-  font-size: 180%;
+.logo {
+  padding: 1.5rem;
 }
 
 .center-form {
