@@ -19,6 +19,18 @@
   <div class="form-input">
     <%= f.text_field :Fullname, class: "fullname-input", placeholder: "Enter Fullname" %>
   </div>
+  <div class="form-label">
+    <%= f.label :Photo, class: "photo-label" %>
+  </div>
+  <div class="form-input">
+    <%= f.file_field :Photo, class: "photo-input text-center", direct_upload: true %>
+  </div>
+  <div class="form-label">
+    <%= f.label :CoverImage, class: "cover-label" %>
+  </div>
+  <div class="form-input">
+    <%= f.file_field :CoverImage, class: "cover-input text-center" , direct_upload: true%>
+  </div>
   <div class="form-actions">
     <%= f.submit "Sign Up",  class: "btn btn-primary signup-btn"%>    
   </div>

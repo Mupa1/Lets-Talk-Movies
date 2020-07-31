@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
 
 $primary-color-light: #50a4e2;
+$primary-color-dark: #213246;
 
 * {
   margin: 0;
@@ -18,9 +19,78 @@ input {
   background-color: #fff;
 }
 
+li {
+  list-style: none;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  background-color: $primary-color-light;
+  height: 5rem;
+
+  ul {
+    display: flex;
+    padding-right: 1rem;
+  }
+
+  li {
+    padding: 1.5rem;
+  }
+
+  i {
+    color: #63758b;
+    font-size: 120%;
+  }
+}
+
+.side-nav {
+  background-color: $primary-color-dark;
+
+  .current-user {
+    display: flex;
+    padding: 1rem 0 2rem 1rem;
+  }
+
+  .current-user img {
+    margin: 1rem 0 1rem 2rem;
+  }
+
+  .current-user h6 {
+    padding: 1.5rem 0 0 1rem;
+    color: #667b90;
+  }
+
+  .side-links {
+    padding: 1rem 0 0;
+    width: 100%;
+  }
+
+  .links {
+    padding: 1rem 0 1rem 2.5rem;
+    color: #667b90;
+  }
+
+  .links i {
+    padding-right: 1rem;
+  }
+
+  .active,
+  .links:hover {
+    color: white;
+    background-color: $primary-color-light;
+  }
+
+  .links-path:hover {
+    color: white;
+    background-color: $primary-color-light;
+  }
+}
+
 #logo {
   color: white;
   padding: 1.5rem 0 1.5rem 1.5rem;
+  font-size: 180%;
 }
 
 .center-form {
@@ -46,7 +116,9 @@ input {
 }
 
 .username-label,
-.fullname-label {
+.fullname-label,
+.cover-label,
+.photo-label {
   background-color: #fff;
   width: 100%;
   margin-bottom: 0;
@@ -54,7 +126,9 @@ input {
 }
 
 .username-input,
-.fullname-input {
+.fullname-input,
+.cover-input,
+.photo-input {
   width: 100%;
   border: none;
   border-bottom: 1px solid $primary-color-light;
@@ -63,7 +137,21 @@ input {
   padding-left: 0.4rem;
 }
 
+.cover-input,
+.photo-input {
+  padding: 1rem;
+  border: none;
+  border-bottom: 1px solid $primary-color-light;
+}
+
 input:focus {
   outline: none;
   border-bottom: 2px solid $primary-color-light;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-gap: 0;
+  height: 100vh;
 }
