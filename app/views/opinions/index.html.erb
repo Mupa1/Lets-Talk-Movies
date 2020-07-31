@@ -2,5 +2,39 @@
   <%= render 'shared/side_nav' %>
   <main>
     <%= render 'shared/navigation' %>
+    <div class="main-body">
+    <div class="tweets">
+      <p class="tweets-heading">TWEETS</p>
+      <div class="tweet-form">
+        <p>TWEET MOVIE REVIEW</p>
+        <%= render 'shared/errors', obj: @opinion %>
+        <%= form_for @opinion, url: new_opinion_path  do |f| %>
+          <%= f.text_area :Text, class: "text-input", placeholder: "Compose new tweet" %>
+          <%= f.submit "Tweet", class: "text-btn" %>
+        <% end %>
+      </div>
+      <div class="tweet-body">
+        <p class="tweet-body-header">NEW TWEETS</p>
+        <% @opinions.each do |opinion| %>
+          <div class="tweet-avatar">
+            <div class="picture">
+              <% if opinion.Author[:Photo].nil? %>
+                <%= gravatar_for opinion.Author, size: 50 %>
+              <% else %>
+                <%= image_tag opinion.Author.Photo.thumb.url %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tweet-content">
+            <h4><%= opinion.Author.Fullname.upcase %></h4>
+            <span><%= sanitize opinion.Text %></span>
+              
+            </span>
+          </div>
+          <div class="clear"></div>
+        <% end %>
+      </div>
+    </div>
+  </div> 
   </main>
 </div>

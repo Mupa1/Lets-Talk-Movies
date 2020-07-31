@@ -1,10 +1,12 @@
 <%= render 'shared/errors', obj: @user %>
-<div class="text-center">
-  <div class="twitter-logo">
-      <i class="fab fa-twitter fa-3x"></i>
+
+<div class="nav navbar">
+  <div class="logo">
+    <%= image_tag 'lets_talk_movies.png', height: '40', width: '90' %>
   </div>
-  <h1>Create Twitter Account</h1>
 </div>
+<h1 class="text-center">Create Account</h1>
+
 <div class="center-form">
 <%= form_for (@user), :url => users_path, :html => {class: "signup-form", multipart: true} do |f| %>
   <div class="form-label">
@@ -36,6 +38,6 @@
   </div>
 <% end %>
 <div class="text-center">
-  <%= link_to "Login in to Twitter", login_path %>
+  <%= link_to "Already have an account? Log In", login_path %>
 </div>
 </div>

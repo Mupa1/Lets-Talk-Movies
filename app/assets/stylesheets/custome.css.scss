@@ -23,6 +23,11 @@ li {
   list-style: none;
 }
 
+.navbar {
+  height: 6rem;
+  background-color: $primary-color-light;
+}
+
 .nav-bar {
   display: flex;
   justify-content: space-between;
@@ -88,7 +93,7 @@ li {
 }
 
 .logo {
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .center-form {
@@ -152,4 +157,71 @@ input:focus {
   grid-template-columns: 20% 80%;
   grid-gap: 0;
   height: 100vh;
+}
+
+.main-body {
+  padding-left: 1rem;
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-gap: 0;
+  height: 100vh;
+
+  .tweets-heading {
+    padding: 2rem 0 1rem 0;
+    border-bottom: 2px solid #e7ebee;
+    font-weight: bold;
+  }
+
+  .tweet-form {
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 98%;
+    padding: 1rem;
+  }
+
+  .text-input {
+    width: 100%;
+    padding-left: 0.5rem;
+  }
+
+  .text-btn {
+    padding: 1rem;
+    color: white;
+    background-color: $primary-color-light;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .tweet-body {
+    margin: 2rem 0;
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 98%;
+    padding: 1rem;
+  }
+
+  .tweet-body-header {
+    border-bottom: 2px solid #e7ebee;
+    color: $primary-color-light;
+    font-weight: bold;
+    padding: 2rem 0 1rem 0;
+  }
+
+  .tweet-avatar {
+    float: left;
+    margin: 0 1rem 2rem 0;
+  }
+
+  .tweet-content span {
+    font-size: 1.2rem;
+  }
+
+  .tweet-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: -0.2rem;
+  }
+
+  .clear {
+    clear: both;
+  }
 }
