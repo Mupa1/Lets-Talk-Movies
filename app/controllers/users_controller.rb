@@ -15,11 +15,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @opinions = @user.opinions.order('created_at DESC').limit(5)
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:Username, :Fullname)
+    params.require(:user).permit(:Username, :Fullname, :Photo)
   end
 end
