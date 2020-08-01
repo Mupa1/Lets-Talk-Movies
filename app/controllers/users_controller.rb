@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = 'Successfully Registered'
+      flash[:success] = 'Successfully Registered. Please log in.'
       redirect_to root_path
     else
       render 'new'
@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @opinions = @user.opinions.order('created_at DESC').limit(5)
+    @followers = User.user_followers(params[:id], current_user.id)
   end
 
   private

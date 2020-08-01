@@ -21,12 +21,12 @@
               <% if opinion.Author[:Photo].nil? %>
                 <%= gravatar_for opinion.Author, size: 50 %>
               <% else %>
-                <%= cl_image_tag opinion.Author.Photo.thumb.url %>
+                <%= image_tag opinion.Author.Photo.thumb.url %>
               <% end %>
             </div>
           </div>
           <div class="tweet-content">
-            <h4><%= opinion.Author.Fullname.upcase %></h4>
+            <h6><%= opinion.Author.Fullname.titleize %></h6>
             <span><%= sanitize opinion.Text %></span>
               <span class="like">
                 <% if opinion.likes.any? { |like| like.UserId == current_user.id }%>
@@ -47,6 +47,27 @@
         <% end %>
       </div>
     </div>
+    <aside class="who-follow">
+      <div class="follow-header">
+        <p>WHO TO FOLLOW</p>
+      </div>
+      <div class="find-friends">
+        <% @users.each do |user| %>
+          <div class="who-follow-profile">
+            <div>
+              <%= link_to user_path(user), class: 'user' do %>
+                <% unless user[:Photo].nil? %>
+                  <%= image_tag user.Photo.thumb.url, class: 'photo' %>
+                <% else %>
+                  <%= gravatar_for user, size: 50 %>
+                <% end %>
+                <h6><%= user.Fullname.titleize %></h6>
+              <% end %>
+            </div>  
+          </div>
+        <% end %>
+      </div>
+    </aside>
   </div> 
   </main>
 </div>

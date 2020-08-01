@@ -1,9 +1,24 @@
 <div class="side-nav">
   <div class="current-user">
-    <div><%= profile_pic %></div>
+    <div class="picture">
+      <%= profile_pic %>
+    </div>
     <h6><%= current_user.Fullname.upcase %></h6>
   </div>
-  
+  <div class="follow">
+    <div class="following-stat-side">
+      <div class="stats">
+        <p class="stat-count"><%= current_user.followed.size %></p>
+        <p class="stat-name">Following</p>
+      </div>
+    </div>
+    <div class="followed-stat-side">
+      <div class="stats">
+        <p class="stat-count"><%= current_user.followers.size %></p>
+        <p class="stat-name">Followers</p>
+      </div>
+    </div>
+  </div>
   <div class="side-links">
     <div class="home-link links active">
       <i class="fas fa-home"></i>

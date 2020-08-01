@@ -54,7 +54,7 @@ li {
 
   .current-user {
     display: flex;
-    padding: 1rem 0 2rem 1rem;
+    padding: 1rem 0 3rem 0;
   }
 
   .current-user img {
@@ -64,6 +64,24 @@ li {
   .current-user h6 {
     padding: 1.5rem 0 0 1rem;
     color: #667b90;
+  }
+
+  .follow {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+  }
+
+  .stat-name {
+    color: #667B90;
+  }
+
+  .stat-count {
+    padding-left: 2.5rem;
+    margin-bottom: 0.5rem;
+    color:white;
   }
 
   .side-links {
@@ -93,7 +111,7 @@ li {
 }
 
 .logo {
-  padding: 1rem;
+  padding: 1rem 2rem;
 }
 
 .center-form {
@@ -103,11 +121,6 @@ li {
 
 .signup-form {
   padding: 1rem;
-}
-
-.twitter-logo {
-  color: $primary-color-light;
-  padding-top: 3rem;
 }
 
 .signup-btn {
@@ -160,14 +173,14 @@ input:focus {
 }
 
 .main-body {
-  padding-left: 1rem;
+  padding-left: 2rem;
   display: grid;
   grid-template-columns: 75% 25%;
   grid-gap: 0;
   height: 100vh;
 
   .tweets-heading {
-    padding: 2rem 0 1rem 0;
+    padding: 1.5rem 0;
     border-bottom: 2px solid #e7ebee;
     font-weight: bold;
   }
@@ -176,16 +189,18 @@ input:focus {
     background-color: white;
     border-radius: 0.5rem;
     width: 98%;
-    padding: 1rem;
+    padding: 1.5rem;
+    margin-top: 2rem;
   }
 
   .text-input {
     width: 100%;
-    padding-left: 0.5rem;
+    padding: 1rem 1rem 0;
+    border-radius: 5px;
   }
 
   .text-btn {
-    padding: 1rem;
+    padding: 1rem 2rem;
     color: white;
     background-color: $primary-color-light;
     border-radius: 5px;
@@ -193,18 +208,19 @@ input:focus {
   }
 
   .tweet-body {
-    margin: 2rem 0;
+    margin-top: 2rem;
     background-color: white;
     border-radius: 0.5rem;
     width: 98%;
-    padding: 1rem;
+    padding: 2rem;
   }
 
   .tweet-body-header {
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
     border-bottom: 2px solid #e7ebee;
     color: $primary-color-light;
     font-weight: bold;
-    padding: 2rem 0 1rem 0;
   }
 
   .tweet-avatar {
@@ -216,9 +232,9 @@ input:focus {
     font-size: 1.2rem;
   }
 
-  .tweet-content h4 {
-    font-size: 1.5rem;
+  .tweet-content h6 {
     margin-bottom: -0.2rem;
+    font-weight: bold;
   }
 
   .clear {
@@ -234,3 +250,38 @@ input:focus {
   padding: 0rem 0 0 0.5rem;
 }
 
+aside {
+  border-left: 2px solid #E7EBEE;
+  padding-left: 2rem;
+
+  .follow-header {
+    padding-top: 2rem;
+    border-bottom: 2px solid #E7EBEE;
+    margin-bottom: 1rem;
+  }
+
+   .who-follow-profile {
+    margin-bottom: 1rem;
+  }
+
+  .user {
+    display: flex;
+  }
+
+  .photo {
+    border-radius: 50%;
+  }
+
+  .who-follow-profile h6 {
+    padding-left: 1rem;
+    font-weight: bold;
+    color: #333;
+  }
+}
+
+.picture {
+  max-width: 50px;
+  max-height: 50px;
+  min-height: 50px;
+  min-width: 50px;
+}
