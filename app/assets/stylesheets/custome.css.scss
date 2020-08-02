@@ -64,6 +64,13 @@ li {
   object-fit: cover;
 }
 
+.who-follow-profile img {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+}
+
 .side-nav {
   background-color: $primary-color-dark;
 
@@ -292,14 +299,6 @@ aside {
 }
 
 .picture {
-  max-width: 50px;
-  max-height: 50px;
-  min-height: 50px;
-  min-width: 50px;
-  object-fit: cover;
-}
-
-.aside-main-picture {
   max-width: 50px;
   max-height: 50px;
   min-height: 50px;
