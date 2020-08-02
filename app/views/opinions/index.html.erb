@@ -4,17 +4,17 @@
     <%= render 'shared/navigation' %>
     <div class="main-body">
     <div class="tweets">
-      <p class="tweets-heading">TWEETS</p>
+      <p class="tweets-heading">MOVIE REVIEWS</p>
       <div class="tweet-form">
-        <p>TWEET MOVIE REVIEW</p>
+        <p>POST MOVIE REVIEW</p>
         <%= render 'shared/errors', obj: @opinion %>
         <%= form_for @opinion, url: new_opinion_path  do |f| %>
-          <%= f.text_area :Text, class: "text-input", placeholder: "Compose new tweet" %>
-          <%= f.submit "Tweet", class: "text-btn" %>
+          <%= f.text_area :Text, class: "text-input", placeholder: "Compose new..." %>
+          <%= f.submit "POST", class: "text-btn" %>
         <% end %>
       </div>
       <div class="tweet-body">
-        <p class="tweet-body-header">NEW TWEETS</p>
+        <p class="tweet-body-header">NEW REVIEWS</p>
         <% @opinions.each do |opinion| %>
           <div class="tweet-avatar">
             <div class="picture">
@@ -54,16 +54,16 @@
       <div class="find-friends">
         <% @users.each do |user| %>
           <div class="who-follow-profile">
-            <div>
               <%= link_to user_path(user), class: 'user' do %>
-                <% unless user[:Photo].nil? %>
-                  <%= image_tag user.Photo.thumb.url, class: 'photo' %>
-                <% else %>
-                  <%= gravatar_for user, size: 50 %>
-                <% end %>
+                <div class="picture">
+                  <% unless user[:Photo].nil? %>
+                    <%= image_tag user.Photo.thumb.url, class: 'photo' %>
+                  <% else %>
+                    <%= gravatar_for user, size: 50 %>
+                  <% end %>
+                </div>
                 <h6><%= user.Fullname.titleize %></h6>
-              <% end %>
-            </div>  
+              <% end %> 
           </div>
         <% end %>
       </div>

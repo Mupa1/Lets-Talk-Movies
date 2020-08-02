@@ -8,11 +8,13 @@ $primary-color-dark: #213246;
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   background: #f5f6f8;
   font-family: "Roboto", sans-serif;
+  position: relative;
 }
 
 input {
@@ -49,6 +51,19 @@ li {
   }
 }
 
+.who-follow-profile h6 {
+  padding-left: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.cover-img img {
+  display: block;
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
 .side-nav {
   background-color: $primary-color-dark;
 
@@ -62,7 +77,7 @@ li {
   }
 
   .current-user h6 {
-    padding: 1.5rem 0 0 1rem;
+    padding: 1.5rem 0 0 2.5rem;
     color: #667b90;
   }
 
@@ -75,13 +90,13 @@ li {
   }
 
   .stat-name {
-    color: #667B90;
+    color: #667b90;
   }
 
   .stat-count {
     padding-left: 2.5rem;
     margin-bottom: 0.5rem;
-    color:white;
+    color: #fff;
   }
 
   .side-links {
@@ -247,20 +262,20 @@ input:focus {
 }
 
 .like p {
-  padding: 0rem 0 0 0.5rem;
+  padding-left: 0.5rem;
 }
 
 aside {
-  border-left: 2px solid #E7EBEE;
+  border-left: 2px solid #e7ebee;
   padding-left: 2rem;
 
   .follow-header {
     padding-top: 2rem;
-    border-bottom: 2px solid #E7EBEE;
+    border-bottom: 2px solid #e7ebee;
     margin-bottom: 1rem;
   }
 
-   .who-follow-profile {
+  .who-follow-profile {
     margin-bottom: 1rem;
   }
 
@@ -270,12 +285,9 @@ aside {
 
   .photo {
     border-radius: 50%;
-  }
-
-  .who-follow-profile h6 {
-    padding-left: 1rem;
-    font-weight: bold;
-    color: #333;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
   }
 }
 
@@ -284,4 +296,168 @@ aside {
   max-height: 50px;
   min-height: 50px;
   min-width: 50px;
+  object-fit: cover;
+}
+
+.aside-main-picture {
+  max-width: 50px;
+  max-height: 50px;
+  min-height: 50px;
+  min-width: 50px;
+  object-fit: cover;
+}
+
+.main-user-body {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-gap: 0;
+  height: 100vh;
+
+  .user-body {
+    margin: 2rem 0 0 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .user-body-header {
+    border-bottom: 2px solid #e7ebee;
+    padding: 1rem 0 1.5rem 0;
+  }
+
+  .user-avatar {
+    float: left;
+    margin: 0 1rem 2rem 0;
+  }
+
+  .user-content span {
+    font-size: 1.2rem;
+  }
+
+  .user-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: -0.1rem;
+  }
+
+  .clear {
+    clear: both;
+  }
+}
+
+.user-profile {
+  border-left: 2px solid #e7ebee;
+
+  .main-photo-box {
+    min-width: 70px;
+    min-height: 70px;
+    max-width: 70px;
+    max-height: 70px;
+    object-fit: cover;
+  }
+
+  .follow-icon {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .space-icon {
+    margin-right: 2rem;
+  }
+
+  .fa-list {
+    margin-left: 2rem;
+  }
+
+  .follow-icon img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+  }
+
+  .profile-details h5 {
+    font-weight: bold;
+    margin-bottom: -0.3rem;
+  }
+
+  .user-stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.4rem;
+    border-top: 1px solid #e2e3e5;
+    border-bottom: 1px solid #e2e3e5;
+  }
+
+  .following-stat {
+    padding: 0 1rem;
+    border-right: 1px solid #e2e3e5;
+    border-left: 1px solid #e2e3e5;
+  }
+
+  .opinion-stat {
+    padding-right: 1rem;
+  }
+
+  .followed-stat {
+    padding-left: 1rem;
+  }
+
+  .stat-no {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: -0.5rem;
+  }
+
+  .stat-name {
+    font-size: 1.5rem;
+  }
+
+  .followers-section {
+    margin-left: 2rem;
+  }
+
+  .followers-header {
+    padding-top: 3rem;
+    border-bottom: 1px solid #e2e3e5;
+  }
+
+  .follower-profile {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .follower-profile h5 {
+    font-weight: bold;
+    margin-bottom: -0.3rem;
+  }
+
+  .follower-avatar {
+    display: flex;
+  }
+
+  .follower-avatar img {
+    margin-right: 1rem;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+  }
+
+  .follow-icons {
+    margin-right: 1rem;
+  }
+}
+
+.cover-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
 }

@@ -2,5 +2,125 @@
   <%= render 'shared/side_nav' %>
   <main>
     <%= render 'shared/navigation' %>
+    <div class="main-user-body">
+      <div class="user-tweet">
+          <div class="cover-img">
+            <%= cover_image %>
+          </div>
+        <div class="user-body">
+          <p class="user-body-header">ALL REVIEWS</p>
+          <% @opinions.each do |opinion| %>
+            <div class="user-avatar">
+              <div class="picture">
+                <% if opinion.Author[:Photo].nil? %>
+                  <%= gravatar_for opinion.Author, size: 50 %>
+                <% else %>
+                  <%= image_tag opinion.Author.Photo.thumb.url %>
+                <% end %>           
+              </div>
+            </div>
+            <div class="user-content">
+              <h4><%= opinion.Author.Fullname.titleize %></h4>
+              <span><%= opinion.Text %></span>
+              <span class="like">
+              <% if opinion.likes.any? { |like| like.UserId == current_user.id }%>
+                <%= link_to unlike_path(opinion), method: :delete, class: 'user' do %>
+                  <i class="fas fa-heart text-danger"></i>
+                <% end %>
+              <% else %>
+                <%= link_to like_path(opinion), class: 'user' do %>
+                  <i class="fas fa-heart text-white"></i>
+                <% end %>
+              <% end %>
+              <% if opinion.likes.any? %>
+                <p><%= "#{pluralize(opinion.likes.size, 'like')}" %></p>
+              <% end %>
+          </span>
+              <div class="clear"></div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div  class="user-profile">
+      <div class="profile-container">
+          <div class="follow-icon">
+            <% unless current_user.id == @user.id %>
+                <% if current_user.followed.any? { |person| person.FollowedId == @user.id }%>
+                  <%= link_to unfollow_path(@user), method: :delete do %>
+                    <i class="fas fa-minus-circle fa-2x text-muted space-icon"></i>
+                  <% end %>
+                <%else%>
+                  <%= link_to follow_path(@user) do %>
+                    <i class="fas fa-plus-circle fa-2x text-muted space-icon"></i>
+                  <% end %>
+                <% end %>
+            <% end %>
+            <div class="main-photo-box">
+              <% unless @user[:Photo].nil? %>
+                <%= image_tag @user.Photo.medium.url %>
+              <% else %>
+                <%= gravatar_for @user, size: 100 %>
+              <% end %>
+            </div>
+            <i class="fas fa-list fa-lg text-muted ml-2"></i>
+          </div>
+          <div class="profile-details text-center">
+            <h5><%= @user.Fullname.titleize %></h5>
+            <p>@<%= @user.Username %></p>
+          </div> 
+        </div>
+        <div class="user-stat">
+          <div class="opinion-stat">
+            <div>
+              <p class="stat-no"><%= @opinions.size %></p>
+              <p class="stat-name">Posts</p>
+            </div>
+          </div>
+          <div class="following-stat">
+            <div>
+              <p class="stat-no"><%= @user.followed.size %></p>
+              <p class="stat-name">Following</p>
+            </div>
+          </div>
+          <div class="followed-stat">
+            <div>
+              <p class="stat-no"><%= @user.followers.size %></p>
+              <p class="stat-name">Followers</p>
+            </div>
+          </div>
+        </div>
+        <div class="followers-section">
+          <div class="followers-header">
+            <p>FOLLOWED BY</p>
+          </div>
+          <div class="my-followers">
+              <% @followers.each do |follower| %>
+                <div class="follower-profile">
+                  <div class="follower-avatar">
+                    <% unless follower.Follower[:Photo].nil? %>
+                      <%= image_tag follower.Follower.Photo.thumb.url, class: "photo" %>
+                    <% else %>
+                      <%= gravatar_for follower.Follower, size: 50 %>
+                    <% end %>
+                    <div>
+                      <h5><%= follower.Follower.Fullname.titleize %></h5>
+                      <p>@<%= follower.Follower.Username %> </p>
+                    </div>
+                  </div>
+                  <% if current_user.followed.any? { |person| person.FollowedId == follower.Follower.id }%>
+                    <%= link_to unfollow_path(follower.Follower), method: :delete, class: "follow-icons" do %>
+                        <i class="fas fa-minus-circle fa-2x text-muted"></i>
+                    <% end %>
+                  <%else%>
+                    <%= link_to follow_path(follower.Follower), class: "follow-icons" do %>
+                      <i class="fas fa-plus-circle fa-2x text-muted"></i>
+                    <% end %>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
   </main>
 </div>

@@ -13,4 +13,12 @@ module ApplicationHelper
       image_tag current_user.Photo.thumb.url
     end
   end
+
+  def cover_image
+    if current_user[:CoverImage].nil?
+      image_tag 'https://via.placeholder.com/700x3000?text=No+Cover'
+    else
+      image_tag current_user.CoverImage.standard.url
+    end
+  end
 end

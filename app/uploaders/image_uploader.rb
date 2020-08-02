@@ -2,11 +2,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 
   version :standard do
-    process resize_to_fill: [700, 400, :north]
+    process resize_to_fill: [700, 300, :north]
   end
 
   version :medium do
-    process resize_to_fit: [100, 100]
+    process resize_to_fit: [70, 70]
   end
 
   version :thumb do
