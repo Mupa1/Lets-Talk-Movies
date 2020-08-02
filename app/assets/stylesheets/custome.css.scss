@@ -55,6 +55,13 @@ li {
   padding-left: 1rem;
   font-weight: bold;
   color: #333;
+  margin-bottom: -0.3rem;
+}
+
+.who-follow-profile p {
+  padding-left: 1rem;
+  color: #63758b;
+  font-size: 12px;
 }
 
 .cover-img img {
@@ -68,6 +75,14 @@ li {
   border-radius: 50%;
   height: 50px;
   width: 50px;
+  object-fit: cover;
+}
+
+.picture img {
+  max-width: 50px;
+  max-height: 50px;
+  min-height: 50px;
+  min-width: 50px;
   object-fit: cover;
 }
 
@@ -93,7 +108,11 @@ li {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 2.5rem;
+  }
+
+  .stats {
+    margin-right: 2rem;
   }
 
   .stat-name {
@@ -201,18 +220,16 @@ input:focus {
   grid-gap: 0;
   height: 100vh;
 
-  .tweets-heading {
-    padding: 1.5rem 0;
-    border-bottom: 2px solid #e7ebee;
-    font-weight: bold;
-  }
-
   .tweet-form {
     background-color: white;
     border-radius: 0.5rem;
     width: 98%;
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 5rem 1.5rem;
     margin-top: 2rem;
+  }
+
+  .compose-new {
+    font-weight: bold;
   }
 
   .text-input {
@@ -296,14 +313,6 @@ aside {
     height: 50px;
     object-fit: cover;
   }
-}
-
-.picture {
-  max-width: 50px;
-  max-height: 50px;
-  min-height: 50px;
-  min-width: 50px;
-  object-fit: cover;
 }
 
 .main-user-body {
@@ -459,4 +468,10 @@ aside {
   width: 100%;
   height: auto;
   overflow: hidden;
+}
+
+.time {
+  float: right;
+  color: #333;
+  font-size: 12px;
 }

@@ -20,6 +20,7 @@
               </div>
             </div>
             <div class="user-content">
+            <p class="time"><%= time_ago_in_words(opinion.created_at) %></p> 
               <h4><%= opinion.Author.Fullname.titleize %></h4>
               <span><%= opinion.Text %></span>
               <span class="like">
@@ -90,7 +91,7 @@
           <div class="my-followers">
               <% @followers.each do |follower| %>
                 <div class="follower-profile">
-                  <div class="follower-avatar">
+                  <div class="follower-avatar picture">
                     <% unless follower.Follower[:Photo].nil? %>
                       <%= image_tag follower.Follower.Photo.thumb.url, class: "photo" %>
                     <% else %>
