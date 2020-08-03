@@ -15,10 +15,10 @@ module ApplicationHelper
   end
 
   def cover_image
-    if current_user[:CoverImage].nil?
+    if @user[:CoverImage].nil?
       image_tag 'https://via.placeholder.com/700x3000?text=No+Cover'
     else
-      image_tag current_user.CoverImage.standard.url
+      image_tag @user.CoverImage.standard.url
     end
   end
 end

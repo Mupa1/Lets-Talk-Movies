@@ -17,6 +17,11 @@ body {
   position: relative;
 }
 
+main {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 input {
   background-color: #fff;
 }
