@@ -23,7 +23,7 @@ An MVP version of an app following [Design idea](https://www.behance.net/gallery
 
 ## Live Demo
 
-[Heroku App Link]()
+[Heroku App Link](https://lets-talk-movies.herokuapp.com/)
 
 ## Screenshots
 ![screenshot](images/homepage_screenshot.png)
