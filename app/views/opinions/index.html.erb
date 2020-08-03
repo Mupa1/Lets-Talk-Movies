@@ -30,11 +30,11 @@
             <span><%= sanitize opinion.Text %></span>
               <span class="like">
                 <% if opinion.likes.any? { |like| like.UserId == current_user.id }%>
-                  <%= link_to unlike_path(opinion), method: :delete do %>
+                  <%= link_to unlike_path(opinion), method: :delete, class: 'user-1' do %>
                     <i class="fas fa-heart text-danger"></i>
                   <% end %>
                 <% else %>
-                  <%= link_to like_path(opinion) do %>
+                  <%= link_to like_path(opinion), class: 'user-2' do %>
                     <i class="fas fa-heart"></i>
                   <% end %>
                 <% end %>

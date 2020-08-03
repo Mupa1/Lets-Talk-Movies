@@ -47,11 +47,11 @@
           <div class="follow-icon">
             <% unless current_user.id == @user.id %>
                 <% if current_user.followed.any? { |person| person.FollowedId == @user.id }%>
-                  <%= link_to unfollow_path(@user), method: :delete do %>
+                  <%= link_to unfollow_path(@user), method: :delete, class: "font-unfollow-icon" do %>
                     <i class="fas fa-minus-circle fa-2x text-muted space-icon"></i>
                   <% end %>
                 <%else%>
-                  <%= link_to follow_path(@user) do %>
+                  <%= link_to follow_path(@user), class: "font-follow-icon" do %>
                     <i class="fas fa-plus-circle fa-2x text-muted space-icon"></i>
                   <% end %>
                 <% end %>
