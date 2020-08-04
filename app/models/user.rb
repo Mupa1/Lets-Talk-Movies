@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  has_one_attached :Photo
   has_many :opinions, foreign_key: 'AuthorId', class_name: 'Opinion'
   has_many :likes, foreign_key: 'UserId', class_name: 'Like'
   has_many :followed, foreign_key: 'FollowerId', class_name: 'Following'

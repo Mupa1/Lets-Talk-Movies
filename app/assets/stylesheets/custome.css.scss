@@ -17,11 +17,6 @@ body {
   position: relative;
 }
 
-main {
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
 input {
   background-color: #fff;
 }
@@ -33,6 +28,10 @@ li {
 .navbar {
   height: 6rem;
   background-color: $primary-color-light;
+}
+
+.alert {
+  margin-bottom: 0;
 }
 
 .nav-bar {
@@ -199,10 +198,10 @@ li {
   padding-left: 0.4rem;
 }
 
-.cover-input,
-.photo-input {
+#user_Photo,
+#user_CoverImage {
   padding: 1rem;
-  border: none;
+  border: 0;
   border-bottom: 1px solid $primary-color-light;
 }
 
@@ -211,11 +210,18 @@ input:focus {
   border-bottom: 2px solid $primary-color-light;
 }
 
+#user_Photo:focus,
+#user_CoverImage:focus {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid $primary-color-light;
+}
+
 .main-content {
   display: grid;
   grid-template-columns: 20% 80%;
   grid-gap: 0;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .main-body {
@@ -223,7 +229,7 @@ input:focus {
   display: grid;
   grid-template-columns: 75% 25%;
   grid-gap: 0;
-  height: 100vh;
+  min-height: 100vh;
 
   .tweet-form {
     background-color: white;
@@ -324,7 +330,7 @@ aside {
   display: grid;
   grid-template-columns: 75% 25%;
   grid-gap: 0;
-  height: 100vh;
+  min-height: 100vh;
 
   .user-body {
     margin: 2rem 0 0 2rem;

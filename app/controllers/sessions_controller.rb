@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
     user = User.find_by(Username: params[:session][:Username].downcase)
     if user
       session[:user_id] = user.id
-      flash[:success] = 'You have successfully logged in'
+      flash[:success] = 'Welcome @' + user.Username
       redirect_to root_path
     else
-      flash.now[:danger] = 'There was something wrong with your login information'
+      flash[:danger] = 'Invalid inputs. Please try again or register first.'
       render 'new'
     end
   end

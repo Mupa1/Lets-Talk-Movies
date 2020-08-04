@@ -2,31 +2,30 @@
 
 A Desktop Social Media Web App for connecting Movie Funs. Funs can post their opinions about movies or series they've watched, like opinions, follow their friends or other users whose content they enjoy consuming.
 
-# Project Specification
+## Screenshot
+![screenshot](images/homepage_screenshot.png)
+
+## Live Demo
+
+[Heroku App Link](https://lets-talk-movies.herokuapp.com/)
+
+## Video Presentation
+
+[Link to video presentation]()
+
+## Project Specification
 
 An MVP version of an app following [Design idea](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details) by Gregoire Vella on Behance.
 
 ## Future features
-
-1. Add functionality for users to edit and delete posts. 
+ 
 1. Add functionality for users to comment on posts.
 
 ## Built With
 
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
-- Gems used for testing: Capybara, Rspec-Rails, Shoulda-matchers
-
-## Video Presentation
-
-[Link to video presentation]()
-
-## Live Demo
-
-[Heroku App Link](https://lets-talk-movies.herokuapp.com/)
-
-## Screenshots
-![screenshot](images/homepage_screenshot.png)
+- Gems used for testing: Capybara, Rspec-Rails
 
 ## Getting Started
 
@@ -50,9 +49,12 @@ Install gems with:
 ```
 
 Setup database with:
+```Ruby
+    rails db:create
+```
 
 ```Ruby
-   rails db:migrate
+    rails db:migrate
 ```
 
 Setup cloudinary:
