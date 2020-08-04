@@ -7,17 +7,20 @@ class OpinionsController < ApplicationController
     @users = User.all_users(current_user.id).order('created_at DESC')
   end
 
-  def create
-    @opinion = Opinion.new(opinion_params)
-    @opinion.AuthorId = current_user.id
+  def new
+    @opinion = current_user.opinions.build
+  end
 
+  def create
+    @opinion = current_user.opinions.build(opinion_params)
     if @opinion.save
-      flash[:success] = 'Tweet created successfully'
+      flash[:success] = 'Review created successfully'
       redirect_to root_path
-    else
-      flash[:alert] = 'Something went wrong'
-      render :index
     end
+  end
+
+  def show
+    @opinion = Opinion.find(params[:id])
   end
 
   private

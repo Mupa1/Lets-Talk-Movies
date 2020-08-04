@@ -1,0 +1,34 @@
+<section class="tweet-body">
+  <p class="tweet-body-header">NEW REVIEWS</p>
+  <% @opinions.each do |opinion| %>
+    <div class="tweet-avatar">
+      <div class="picture">
+        <% if opinion.Author[:Photo].nil? %>
+          <%= gravatar_for opinion.Author, size: 50 %>
+        <% else %>
+          <%= image_tag opinion.Author.Photo.thumb.url %>
+        <% end %>
+      </div>
+    </div>
+    <div class="tweet-content">
+    <p class="time"><%= time_ago_in_words(opinion.created_at) %></p> 
+      <h6><%= opinion.Author.Fullname.titleize %></h6>
+      <span><%= sanitize opinion.Text %></span>
+        <span class="like">
+          <% if opinion.likes.any? { |like| like.UserId == current_user.id }%>
+            <%= link_to unlike_path(opinion), method: :delete, class: 'user-1' do %>
+              <i class="fas fa-heart text-danger"></i>
+            <% end %>
+          <% else %>
+            <%= link_to like_path(opinion), class: 'user-2' do %>
+              <i class="fas fa-heart"></i>
+            <% end %>
+          <% end %>
+          <% if opinion.likes.any? %>
+            <p><%= "#{pluralize(opinion.likes.size, 'like')}" %></p>
+          <% end %>
+      </span>
+    </div>
+    <div class="clear"></div>
+  <% end %>
+</section>

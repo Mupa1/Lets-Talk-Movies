@@ -2,10 +2,10 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    user = User.find_by(Username: params[:session][:Username].downcase)
-    if user
-      session[:user_id] = user.id
-      flash[:success] = 'Welcome @' + user.Username
+    @user = User.find_by(sign_in_params)
+    if @user
+      session[:current_user] = @user.id
+      flash[:success] = 'Welcome ' + current_user.Fullname
       redirect_to root_path
     else
       flash[:danger] = 'Invalid inputs. Please try again or register first.'
@@ -16,6 +16,12 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     flash[:success] = 'You have logged out'
-    redirect_to root_path
+    redirect_to login_path
+  end
+
+  private
+
+  def sign_in_params
+    params.permit(:username)
   end
 end

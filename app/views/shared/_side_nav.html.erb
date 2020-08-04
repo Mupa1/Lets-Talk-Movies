@@ -22,11 +22,11 @@
   <div class="side-links">
     <div class="home-link links active">
       <i class="fas fa-home"></i>
-      <%= link_to 'HOME', root_path, class: "links-path active" %>
+      <%= link_to 'HOME', root_path, class: "links-path" %>
     </div>
     <div class="profile-link links">
       <i class="fas fa-user"></i>
-      <%= link_to 'PROFILE', user_path(current_user.id), class: "links-path" %>
+      <%= link_to 'PROFILE', root_path, class: "links-path" %>
     </div>
     <div class="logout-link links">
       <i class="fas fa-power-off"></i>
