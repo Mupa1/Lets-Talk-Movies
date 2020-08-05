@@ -1,22 +1,25 @@
 class OpinionsController < ApplicationController
-  before_action :authorize, only: [:index]
+  before_action :authorize, only: %i[index]
 
   def index
     @opinion = Opinion.new
     @opinions = Opinion.order('created_at DESC').includes(:Author).limit(5)
-    @users = User.all_users(current_user.id).order('created_at DESC')
+    @users = User.all_users(current_user).order('created_at DESC')
   end
 
   def new
-    @opinion = current_user.opinions.build
+    @opinion = Opinion.new
   end
 
   def create
-    @opinion = current_user.opinions.build(opinion_params)
+    @opinion = Opinion.new(opinion_params)
+    @opinion.AuthorId = current_user.id
     if @opinion.save
       flash[:success] = 'Review created successfully'
-      redirect_to root_path
+    else
+      flash[:errors] = @opinion.errors.full_messages
     end
+    redirect_to root_path
   end
 
   def show

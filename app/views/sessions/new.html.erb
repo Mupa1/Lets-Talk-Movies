@@ -1,8 +1,4 @@
-<div class="navbar navbar-default">
-  <div class="logo">
-    <%= image_tag 'lets_talk_movies.png', height: '40', width: '90' %>
-  </div>
-</div>
+<%= render 'shared/navigation' %>
 <h1 class="text-center">Log In</h1>
 <div class="center-form">
   <%= form_for (:session), :url => login_path, :html => {class: "signup-form"} do |f| %>

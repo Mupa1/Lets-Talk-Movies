@@ -6,6 +6,10 @@ module ApplicationHelper
     image_tag(gravatar_url, alt: user.Username, class: 'gravatar')
   end
 
+  def current_user
+    session[:current_user] ? User.find(session[:current_user]) : nil
+  end
+
   def profile_pic
     if current_user[:Photo].nil?
       gravatar_for current_user, size: 50
@@ -16,7 +20,7 @@ module ApplicationHelper
 
   def cover_image
     if @user[:CoverImage].nil?
-      image_tag 'https://via.placeholder.com/700x3000?text=No+Cover'
+      image_tag 'https://via.placeholder.com/700x300?text=No+Cover'
     else
       image_tag @user.CoverImage.standard.url
     end

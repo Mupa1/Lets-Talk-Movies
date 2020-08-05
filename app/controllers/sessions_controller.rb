@@ -1,20 +1,23 @@
 class SessionsController < ApplicationController
+  before_action :user_already_signed_in, except: %i[destroy]
+
   def new; end
 
   def create
-    @user = User.find_by(sign_in_params)
-    if @user
-      session[:current_user] = @user.id
+    user = User.find_by(Username: params[:session][:Username].downcase)
+
+    if user.nil?
+      flash[:notice] = ['Incorrect username, please try again or register first.']
+      redirect_to login_path
+    else
+      session[:current_user] = user.id
       flash[:success] = 'Welcome ' + current_user.Fullname
       redirect_to root_path
-    else
-      flash[:danger] = 'Invalid inputs. Please try again or register first.'
-      render 'new'
     end
   end
 
   def destroy
-    session[:user_id] = nil
+    session[:current_user] = nil
     flash[:success] = 'You have logged out'
     redirect_to login_path
   end
@@ -22,6 +25,6 @@ class SessionsController < ApplicationController
   private
 
   def sign_in_params
-    params.permit(:username)
+    params.permit(:Username)
   end
 end

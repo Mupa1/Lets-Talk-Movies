@@ -3,11 +3,11 @@
   <main>
     <%= render 'shared/navigation' %>
     <div class="main-user-body">
-      <div class="user-tweet">
-          <div class="cover-img">
-            <%= cover_image %>
-          </div>
-        <div class="user-body">
+      <section class="user-tweet">
+        <article class="cover-img">
+          <%= cover_image %>
+        </article>
+        <article class="user-body">
           <p class="user-body-header">ALL REVIEWS</p>
           <% @opinions.each do |opinion| %>
             <div class="user-avatar">
@@ -40,8 +40,8 @@
               <div class="clear"></div>
             </div>
           <% end %>
-        </div>
-      </div>
+        </article>
+      </section>
       <div  class="user-profile">
       <div class="profile-container">
           <div class="follow-icon">

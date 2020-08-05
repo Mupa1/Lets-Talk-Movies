@@ -6,8 +6,9 @@
     <div class="tweets">
       <div class="tweet-form">
         <p class="compose-new">POST MOVIE REVIEW</p>
-        <%= render 'shared/errors', obj: @opinion %>
+        
         <%= form_for @opinion, url: new_opinion_path  do |f| %>
+          
           <%= f.text_area :Text, class: "text-input", placeholder: "Compose new..." %>
           <%= f.submit "POST", class: "text-btn pull-right" %>
         <% end %>

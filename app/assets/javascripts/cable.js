@@ -11,5 +11,3 @@
   App.cable = ActionCable.createConsumer();
 
 }).call(this);
-
-$(".alert").fadeOut(3000);

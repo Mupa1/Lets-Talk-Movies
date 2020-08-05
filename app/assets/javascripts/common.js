@@ -1,1 +1,0 @@
-$(".alert-success").fadeOut(3000);
