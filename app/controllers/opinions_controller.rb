@@ -15,9 +15,9 @@ class OpinionsController < ApplicationController
     @opinion = Opinion.new(opinion_params)
     @opinion.AuthorId = current_user.id
     if @opinion.save
-      flash[:success] = 'Review created successfully'
+      flash[:success] = 'Review created successfully.'
     else
-      flash[:errors] = @opinion.errors.full_messages
+      flash[:danger] = 'Opinion cannot be less than 3 or more than 250 characters.'
     end
     redirect_to root_path
   end

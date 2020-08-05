@@ -5,15 +5,22 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(Username: params[:session][:Username].downcase)
-
-    if user.nil?
-      flash[:notice] = ['Incorrect username, please try again or register first.']
-      redirect_to login_path
-    else
+    if user
       session[:current_user] = user.id
       flash[:success] = 'Welcome ' + current_user.Fullname
-      redirect_to root_path
+      redirect_to root_path(user)
+    else
+      flash[:danger] = 'Incorrect username, please try again or register first.'
+      redirect_to login_path
     end
+    # if user.nil?
+    #   flash[:danger] = ['Incorrect username, please try again or register first.']
+    #   redirect_to login_path
+    # else
+    #   session[:current_user] = user.id
+    #   flash[:success] = 'Welcome ' + current_user.Fullname
+    #   redirect_to root_path
+    # end
   end
 
   def destroy
