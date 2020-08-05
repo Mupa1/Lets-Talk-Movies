@@ -3,9 +3,9 @@
     <p>WHO TO FOLLOW</p>
   </div>
   <div class="find-friends">
-    <% @users.each do |user| %>
+    <% current_user.follow_suggestions.each do |user| %>
       <div class="who-follow-profile">
-          <%= link_to root_path, class: 'user' do %>
+          <%= link_to user_path(user), class: 'user' do %>
             <div class="picture">
               <% unless user[:Photo].nil? %>
                 <%= image_tag user.Photo.thumb.url %>
