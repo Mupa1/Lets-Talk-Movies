@@ -7,15 +7,13 @@ class ApplicationController < ActionController::Base
   def user_already_signed_in
     return if current_user.nil?
 
-    flash[:notice] = 'Already signed in, sign out if you want to reconnect as another user or create a new account'
+    flash[:warning] = 'Already signed in, sign out if you want to reconnect as another user or create a new account'
     redirect_to root_path
     false
   end
 
   def authorize
     return unless current_user.nil?
-
-    flash[:notice] = 'Please sign in.'
     redirect_to login_path
     false
   end

@@ -13,25 +13,11 @@ class SessionsController < ApplicationController
       flash[:danger] = 'Incorrect username, please try again or register first.'
       redirect_to login_path
     end
-    # if user.nil?
-    #   flash[:danger] = ['Incorrect username, please try again or register first.']
-    #   redirect_to login_path
-    # else
-    #   session[:current_user] = user.id
-    #   flash[:success] = 'Welcome ' + current_user.Fullname
-    #   redirect_to root_path
-    # end
   end
 
   def destroy
     session[:current_user] = nil
     flash[:success] = 'You have logged out'
     redirect_to login_path
-  end
-
-  private
-
-  def sign_in_params
-    params.permit(:Username)
   end
 end
