@@ -1,0 +1,34 @@
+<article class="user-body">
+  <p class="user-body-header">ALL REVIEWS</p>
+  <% @opinions.each do |opinion| %>
+    <div class="user-avatar">
+      <div class="picture">
+        <% if opinion.Author[:Photo].nil? %>
+          <%= gravatar_for opinion.Author, size: 50 %>
+        <% else %>
+          <%= image_tag opinion.Author.Photo.thumb.url %>
+        <% end %>           
+      </div>
+    </div>
+    <div class="user-content">
+    <p class="time"><%= time_ago_in_words(opinion.created_at) %></p> 
+      <h4><%= opinion.Author.Fullname.titleize %></h4>
+      <span><%= opinion.Text %></span>
+      <span class="like">
+      <% if opinion.likes.any? { |like| like.UserId == current_user.id }%>
+        <%= link_to unlike_path(opinion), method: :delete, class: 'user' do %>
+          <i class="fas fa-heart text-danger"></i>
+        <% end %>
+      <% else %>
+        <%= link_to like_path(opinion), class: 'user' do %>
+          <i class="fas fa-heart text-white"></i>
+        <% end %>
+      <% end %>
+      <% if opinion.likes.any? %>
+        <p><%= "#{pluralize(opinion.likes.size, 'like')}" %></p>
+      <% end %>
+  </span>
+      <div class="clear"></div>
+    </div>
+  <% end %>
+</article>
