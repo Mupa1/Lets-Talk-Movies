@@ -2,62 +2,16 @@
 @import "bootstrap";
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
 
-$primary-color-light: #50a4e2;
-$primary-color-dark: #213246;
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: #f5f6f8;
-  font-family: "Roboto", sans-serif;
-  position: relative;
-}
-
-input {
-  background-color: #fff;
-}
-
-li {
-  list-style: none;
-}
-
-.my-flex {
-  display: flex;
-}
-
-.navbar {
-  height: 6rem;
-  background-color: $primary-color-light;
-}
-
-.alert {
-  margin-bottom: 0;
-  position: absolute;
-  right: 35%;
-  width: 30%;
-  text-align: center;
-}
-
-.nav-bar {
-  background-color: $primary-color-light;
-  height: 6rem;
-}
-
-.who-follow-profile h6 {
+.who-follow-profile h5 {
   padding-left: 1rem;
   font-weight: bold;
-  color: #333;
-  margin-bottom: -0.3rem;
 }
 
 .who-follow-profile p {
   padding-left: 1rem;
   color: #63758b;
   font-size: 12px;
+  margin-top: -1rem;
 }
 
 .cover-img img {
@@ -83,7 +37,7 @@ li {
 }
 
 .side-nav {
-  background-color: $primary-color-dark;
+  background-color: #213246;
 
   .current-user {
     padding: 1rem 0 3rem 0;
@@ -136,12 +90,12 @@ li {
   .active,
   .links:hover {
     color: white;
-    background-color: $primary-color-light;
+    background-color: #50a4e2;
   }
 
   .links-path:hover {
     color: white;
-    background-color: $primary-color-light;
+    background-color: #50a4e2;
   }
 }
 
@@ -161,7 +115,7 @@ li {
 .signup-btn {
   width: 100%;
   border-radius: 0.5rem;
-  background-color: $primary-color-light;
+  background-color: #50a4e2;
   padding: 1.5rem;
   font-weight: bolder;
 }
@@ -182,7 +136,7 @@ li {
 .photo-input {
   width: 100%;
   border: none;
-  border-bottom: 1px solid $primary-color-light;
+  border-bottom: 1px solid #50a4e2;
   height: 4rem;
   margin-bottom: 2.5rem;
   padding-left: 0.4rem;
@@ -192,19 +146,19 @@ li {
 #user_CoverImage {
   padding: 1rem;
   border: 0;
-  border-bottom: 1px solid $primary-color-light;
+  border-bottom: 1px solid #50a4e2;
 }
 
 input:focus {
   outline: none;
-  border-bottom: 2px solid $primary-color-light;
+  border-bottom: 2px solid #50a4e2;
 }
 
 #user_Photo:focus,
 #user_CoverImage:focus {
   border: none;
   outline: none;
-  border-bottom: 2px solid $primary-color-light;
+  border-bottom: 2px solid #50a4e2;
 }
 
 .main-content {
@@ -221,7 +175,7 @@ input:focus {
   grid-gap: 0;
   min-height: 100vh;
 
-  .tweet-form {
+  .opinion-form {
     background-color: white;
     border-radius: 0.5rem;
     width: 98%;
@@ -242,12 +196,12 @@ input:focus {
   .text-btn {
     padding: 1rem 2rem;
     color: white;
-    background-color: $primary-color-light;
+    background-color: #50a4e2;
     border-radius: 5px;
     border: none;
   }
 
-  .tweet-body {
+  .opinion-body {
     margin-top: 2rem;
     background-color: white;
     border-radius: 0.5rem;
@@ -255,26 +209,26 @@ input:focus {
     padding: 2rem;
   }
 
-  .tweet-body-header {
+  .opinion-body-header {
     padding-bottom: 1.5rem;
     margin-bottom: 2rem;
     border-bottom: 2px solid #e7ebee;
-    color: $primary-color-light;
+    color: #50a4e2;
     font-weight: bold;
   }
 
-  .tweet-avatar {
+  .opinion-avatar {
     float: left;
     margin: 0 1rem 2rem 0;
   }
 
-  .tweet-content span {
-    font-size: 1.2rem;
+  .opinion-content span {
+    font-size: 1.4rem;
+    color: #63758b;
   }
 
-  .tweet-content h6 {
+  .opinion-content h5 {
     margin-bottom: -0.2rem;
-    font-weight: bold;
   }
 
   .clear {
@@ -320,157 +274,10 @@ aside {
   grid-template-columns: 75% 25%;
   grid-gap: 0;
   min-height: 100vh;
-
-  .user-body {
-    margin: 2rem 0 0 2rem;
-    background-color: white;
-    border-radius: 0.5rem;
-    width: 95%;
-    padding: 1rem;
-  }
-
-  .user-body-header {
-    border-bottom: 2px solid #e7ebee;
-    padding: 1rem 0 1.5rem 0;
-  }
-
-  .user-avatar {
-    float: left;
-    margin: 0 1rem 2rem 0;
-  }
-
-  .user-content span {
-    font-size: 1.2rem;
-  }
-
-  .user-content h4 {
-    font-size: 1.5rem;
-    margin-bottom: -0.1rem;
-  }
-
-  .clear {
-    clear: both;
-  }
-}
-
-.user-profile {
-  border-left: 2px solid #e7ebee;
-
-  .main-photo-box {
-    min-width: 70px;
-    min-height: 70px;
-    max-width: 70px;
-    max-height: 70px;
-    object-fit: cover;
-  }
-
-  .follow-icon {
-    padding-top: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .space-icon {
-    margin-right: 1.5rem;
-  }
-
-  .fa-list {
-    margin-left: 2rem;
-  }
-
-  .follow-icon img {
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-  }
-
-  .profile-details h5 {
-    font-weight: bold;
-    margin-bottom: -0.1rem;
-    margin-top: 2.5rem;
-  }
-
-  .user-stat {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1.7rem;
-    border-top: 1px solid #e2e3e5;
-    border-bottom: 1px solid #e2e3e5;
-  }
-
-  .following-stat {
-    padding: 0 1rem;
-    border-right: 1px solid #e2e3e5;
-    border-left: 1px solid #e2e3e5;
-  }
-
-  .opinion-stat {
-    padding-right: 1rem;
-  }
-
-  .followed-stat {
-    padding-left: 1rem;
-  }
-
-  .stat-no {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: -0.3rem;
-    padding-top: 1rem;
-  }
-
-  .stat-name {
-    font-size: 1.5rem;
-    padding-bottom: 0.5rem;
-  }
-
-  .followers-section {
-    margin-left: 2rem;
-  }
-
-  .followers-header {
-    padding-top: 3rem;
-    border-bottom: 1px solid #e2e3e5;
-  }
-
-  .follower-profile {
-    margin-top: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .follower-profile h5 {
-    font-weight: bold;
-    margin-bottom: -0.3rem;
-  }
-
-  .follower-avatar img {
-    margin-right: 1rem;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    object-fit: cover;
-  }
-
-  .follow-icons {
-    margin-right: 1rem;
-  }
-}
-
-.cover-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
 }
 
 .time {
   float: right;
   color: #333;
-  font-size: 12px;
+  font-size: 1.3rem;
 }

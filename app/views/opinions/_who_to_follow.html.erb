@@ -6,13 +6,9 @@
     <% current_user.follow_suggestions.each do |user| %>
       <div class="who-follow-profile">
         <div class="my-flex picture">
-          <% unless user[:Photo].nil? %>
-            <%= image_tag user.Photo.thumb.url %>
-          <% else %>
-            <%= gravatar_for user, size: 50 %>
-          <% end %>
+          <%= user_pic(user) %>
           <div class="profile-details">
-            <h6><%= link_to user.Fullname.titleize, user_path(user) %></h6>
+            <h5><%= link_to user.Fullname.titleize, user_path(user) %></h5>
             <p>@<%= user.Username %></p>
           </div> 
         </div>

@@ -13,3 +13,49 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f6f8;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+}
+
+input {
+  background-color: #fff;
+}
+
+li {
+  list-style: none;
+}
+
+.my-flex {
+  display: flex;
+}
+
+.navbar {
+  height: 6rem;
+  background-color: #50a4e2;
+}
+
+.alert {
+  margin-bottom: 0;
+  position: absolute;
+  right: 35%;
+  width: 30%;
+  text-align: center;
+}
+
+.nav-bar {
+  background-color: #50a4e2;
+  height: 6rem;
+}

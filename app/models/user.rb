@@ -10,7 +10,7 @@ class User < ApplicationRecord
   mount_uploader :CoverImage, ImageUploader
   
   def self.user_followers(id, current_user_id)
-    Following.where(FollowedId: id).where.not(FollowerId: current_user_id).order(created_at: :desc).limit(5)
+    Following.where(FollowedId: id).where.not(FollowerId: current_user_id).order(created_at: :desc).limit(3)
   end
 
   def self.all_users_except_me(user_id)
@@ -18,6 +18,6 @@ class User < ApplicationRecord
   end
 
   def follow_suggestions
-    (User.all - followed - [User.find(id)])[0..4]
+    (User.all - followed - [User.find(id)])[0..2]
   end
 end

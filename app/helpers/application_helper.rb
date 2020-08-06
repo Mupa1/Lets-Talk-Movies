@@ -18,11 +18,11 @@ module ApplicationHelper
     end
   end
 
-  def cover_image
-    if @user[:CoverImage].nil?
-      image_tag 'https://via.placeholder.com/700x300?text=No+Cover'
+  def user_pic(user)
+    unless user[:Photo].nil?
+      image_tag user.Photo.thumb.url
     else
-      image_tag @user.CoverImage.standard.url
+        gravatar_for user, size: 50
     end
   end
 end

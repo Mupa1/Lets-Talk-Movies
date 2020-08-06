@@ -3,15 +3,10 @@
   <main>
     <%= render 'shared/navigation' %>
     <div class="main-body">
-    <div class="tweets">
-      <div class="tweet-form">
+    <div class="opinions">
+      <div class="opinion-form">
         <p class="compose-new">POST MOVIE REVIEW</p>
-        
-        <%= form_for @opinion, url: new_opinion_path  do |f| %>
-          
-          <%= f.text_area :Text, class: "text-input", placeholder: "Compose new..." %>
-          <%= f.submit "POST", class: "text-btn pull-right" %>
-        <% end %>
+        <%= render 'form' %>
       </div>
       <%= render 'opinions' %>
     </div>

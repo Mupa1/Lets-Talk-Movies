@@ -3,8 +3,8 @@ class OpinionsController < ApplicationController
 
   def index
     @opinion = Opinion.new
-    @opinions = Opinion.all.ordered_by_most_recent.includes(:likes, :Author).limit(5)
-    @users = User.all_users_except_me(current_user)
+    @opinions = Opinion.all.ordered_by_most_recent.includes(:likes, :Author)
+    @users = User.all_users_except_me(current_user).includes(:likes)
   end
 
   def new
@@ -12,8 +12,7 @@ class OpinionsController < ApplicationController
   end
 
   def create
-    @opinion = Opinion.new(opinion_params)
-    @opinion.AuthorId = current_user.id
+    @opinion = current_user.opinions.build(opinion_params)
     if @opinion.save
       flash[:success] = 'Review created successfully.'
     else
