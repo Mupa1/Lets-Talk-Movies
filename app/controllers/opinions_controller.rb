@@ -3,7 +3,7 @@ class OpinionsController < ApplicationController
 
   def index
     @opinion = Opinion.new
-    @opinions = Opinion.order('created_at DESC').includes(Author: :likes ).limit(5)
+    @opinions = Opinion.order('created_at DESC').includes(:likes, :Author).limit(5)
     @users = User.all_users_except_me(current_user).order('created_at DESC')
   end
 
@@ -23,7 +23,7 @@ class OpinionsController < ApplicationController
   end
 
   def show
-    @opinion = Opinion.find(params[:id]).includes(:likes).to_a
+    @opinion = Opinion.find(params[:id]).includes(:likes)
   end
 
   private
