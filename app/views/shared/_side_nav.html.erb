@@ -1,11 +1,11 @@
 <section class="side-nav">
-  <div class="current-user">
+  <div class="current-user my-flex">
     <div class="picture">
       <%= profile_pic %>
     </div>
     <h6><%= current_user.Fullname.upcase %></h6>
   </div>
-  <div class="follow">
+  <div class="follow my-flex">
     <div class="following-stat-side">
       <div class="stats">
         <p class="stat-count"><%= current_user.followed.size %></p>

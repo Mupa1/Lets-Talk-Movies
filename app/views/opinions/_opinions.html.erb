@@ -14,7 +14,7 @@
     <p class="time"><%= time_ago_in_words(opinion.created_at) %></p> 
       <h6><%= opinion.Author.Fullname.titleize %></h6>
       <span><%= sanitize opinion.Text %></span>
-        <span class="like">
+        <span class="like my-flex">
           <% if opinion.likes.any? { |like| like.UserId == current_user.id }%>
             <%= link_to unlike_path(opinion), method: :delete, class: 'user-1' do %>
               <i class="fas fa-heart text-danger"></i>

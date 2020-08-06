@@ -25,6 +25,10 @@ li {
   list-style: none;
 }
 
+.my-flex {
+  display: flex;
+}
+
 .navbar {
   height: 6rem;
   background-color: $primary-color-light;
@@ -39,24 +43,8 @@ li {
 }
 
 .nav-bar {
-  display: flex;
-  justify-content: space-between;
   background-color: $primary-color-light;
   height: 6rem;
-
-  ul {
-    display: flex;
-    padding-right: 1rem;
-  }
-
-  li {
-    padding: 2rem;
-  }
-
-  i {
-    color: #63758b;
-    font-size: 120%;
-  }
 }
 
 .who-follow-profile h6 {
@@ -98,7 +86,6 @@ li {
   background-color: $primary-color-dark;
 
   .current-user {
-    display: flex;
     padding: 1rem 0 3rem 0;
   }
 
@@ -112,7 +99,6 @@ li {
   }
 
   .follow {
-    display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -296,10 +282,6 @@ input:focus {
   }
 }
 
-.like {
-  display: flex;
-}
-
 .like p {
   padding-left: 0.5rem;
 }
@@ -315,7 +297,10 @@ aside {
   }
 
   .who-follow-profile {
-    margin-bottom: 1rem;
+    margin: 0 1rem 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .user {
@@ -462,10 +447,6 @@ aside {
   .follower-profile h5 {
     font-weight: bold;
     margin-bottom: -0.3rem;
-  }
-
-  .follower-avatar {
-    display: flex;
   }
 
   .follower-avatar img {

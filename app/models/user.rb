@@ -8,13 +8,13 @@ class User < ApplicationRecord
   validates :Fullname, presence: true, length: { minimum: 3, maximum: 100 }
   mount_uploader :Photo, ImageUploader
   mount_uploader :CoverImage, ImageUploader
-
+  
   def self.user_followers(id, current_user_id)
     Following.where(FollowedId: id).where.not(FollowerId: current_user_id).order(created_at: :desc).limit(5)
   end
 
   def self.all_users_except_me(user_id)
-    User.where.not(id: user_id)
+    User.where.not(id: user_id).order('created_at DESC')
   end
 
   def follow_suggestions

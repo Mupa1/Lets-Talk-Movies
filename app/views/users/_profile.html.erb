@@ -47,7 +47,7 @@
   <div class="my-followers">
     <% @followers.each do |follower| %>
       <div class="follower-profile">
-        <div class="follower-avatar picture">
+        <div class="follower-avatar my-flex picture">
           <% unless follower.Follower[:Photo].nil? %>
             <%= image_tag follower.Follower.Photo.thumb.url, class: "photo" %>
           <% else %>

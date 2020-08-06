@@ -104,6 +104,7 @@ GEM
       thor (>= 0.14.0, < 2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    hirb (0.7.3)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -297,6 +298,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   database_cleaner
   figaro
+  hirb
   jbuilder (~> 2.5)
   jquery-rails
   launchy
