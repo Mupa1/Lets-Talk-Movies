@@ -25,7 +25,7 @@ An MVP version of an app following [Design idea](https://www.behance.net/gallery
 
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
-- Gems used for testing: Capybara, Rspec-Rails
+- Rspec-Rails
 
 ## Getting Started
 
@@ -35,6 +35,7 @@ To get a local copy up and running follow these steps:
 
 - Ruby: 2.7.0
 - Rails: 5.2.4
+- Postgres: >=9.5
 - Git
 
 ### Usage
