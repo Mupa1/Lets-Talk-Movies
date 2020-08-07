@@ -14,6 +14,4 @@ module UsersHelper
       image_tag @user.CoverImage.standard.url
     end
   end
-
-  
 end

@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   def current_user
     session[:current_user] ? User.find(session[:current_user]) : nil
   end
@@ -14,6 +13,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
     return unless current_user.nil?
+
     redirect_to login_path
     false
   end

@@ -19,10 +19,10 @@ module ApplicationHelper
   end
 
   def user_pic(user)
-    unless user[:Photo].nil?
-      image_tag user.Photo.thumb.url
+    if user[:Photo].nil?
+      gravatar_for user, size: 50
     else
-        gravatar_for user, size: 50
+      image_tag user.Photo.thumb.url
     end
   end
 end

@@ -5,6 +5,11 @@
 .who-follow-profile h5 {
   padding-left: 1rem;
   font-weight: bold;
+  color: #333;
+}
+
+.who-follow-profile a {
+  color: #333;
 }
 
 .who-follow-profile p {
@@ -223,12 +228,13 @@ input:focus {
   }
 
   .opinion-content span {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #63758b;
   }
 
   .opinion-content h5 {
     margin-bottom: -0.2rem;
+    font-weight: bold;
   }
 
   .clear {

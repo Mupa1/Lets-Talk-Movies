@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   get '/', to: 'opinions#index', as: :root
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
