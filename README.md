@@ -15,7 +15,7 @@ A Desktop Social Media Web App for connecting Movie Funs. Funs can post their op
 
 ## Video Presentation
 
-[Link to video presentation]()
+[Link to video presentation](https://www.loom.com/share/fff9b9dea25f40518e373bdce8e77f73)
 
 ## Project Specification
 
