@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-  has_many :opinions, foreign_key: 'AuthorId', class_name: 'Opinion'
-  has_many :likes, foreign_key: 'UserId', class_name: 'Like'
-  has_many :followed, foreign_key: 'FollowerId', class_name: 'Following'
-  has_many :followers, foreign_key: 'FollowedId', class_name: 'Following'
+  has_many :opinions, foreign_key: 'AuthorId', class_name: 'Opinion', dependent: :destroy
+  has_many :likes, foreign_key: 'UserId', class_name: 'Like', dependent: :destroy
+  has_many :followed, foreign_key: 'FollowerId', class_name: 'Following', dependent: :destroy
+  has_many :followers, foreign_key: 'FollowedId', class_name: 'Following', dependent: :destroy
   before_save { self.Username = self.Username.downcase }
   validates :Username, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 3, maximum: 50 }
   validates :Fullname, presence: true, length: { minimum: 3, maximum: 100 }
