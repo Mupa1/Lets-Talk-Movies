@@ -2,8 +2,12 @@
 
 A Desktop Social Media Web App for connecting Movie Funs. Funs can post their opinions about movies or series they've watched, like opinions, follow their friends or other users whose content they enjoy consuming.
 
-## Screenshot
-![screenshot](images/homepage_screenshot.png)
+## Screenshots
+#### Homepage
+![screenshot](images/homepage.png)
+
+#### Profile Page
+![screenshot](images/profile_page.png)
 
 ## Live Demo
 
