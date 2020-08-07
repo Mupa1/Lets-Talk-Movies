@@ -1,10 +1,26 @@
-<div class="row text-center">
-  <div class="width-100 mx-auto">
-    <% flash.each do |name, msg| %>
-      <div class='alert alert-<%="#{name}" %>'>
-        <a href="#" class="close" data-dismiss="alert">&#215;</a>
-        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-      </div>
-    <% end %>  
-  </div>
-</div>
+<% if flash[:success] %>
+        <div class="alert alert-success alert-dismissible fade out in">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <%= flash[:success] %>
+        </div>
+    <% elsif flash[:danger] %>
+        <div class="alert alert-danger alert-dismissible fade out in">
+          <button class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <% flash[:danger].each do |msg| %>
+              <li>
+                <%= msg %>
+              </li>
+          <% end %>
+        </div>
+    <% elsif flash[:warning] %>
+        <div class="alert alert-warning alert-dismissible fade out in">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <%= flash[:warning] %>
+        </div>
+    <% end %>
