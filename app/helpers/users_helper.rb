@@ -14,4 +14,12 @@ module UsersHelper
       image_tag @user.CoverImage.standard.url
     end
   end
+
+  def profile_pic_big
+    if @user[:Photo].nil?
+      gravatar_for @user, size: 100
+    else
+      image_tag @user.Photo.medium.url
+    end
+  end
 end

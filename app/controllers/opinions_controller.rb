@@ -1,5 +1,7 @@
 class OpinionsController < ApplicationController
   before_action :authorize, only: %i[index]
+  before_action :set_opinion, only: [:edit, :update, :destroy]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
     @opinion = Opinion.new
@@ -21,13 +23,38 @@ class OpinionsController < ApplicationController
     redirect_to root_path
   end
 
-  def show
-    @opinion = Opinion.find(params[:id]).includes(:likes)
+  def edit
+  end
+
+  def update
+    if @opinion.update(opinion_params)
+      flash[:notice] = 'Your movie review was updated'
+      redirect_to opinion_path(@opinion)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @opinion.destroy
+    flash[:danger] = 'Review successfully deleted'
+    redirect_to root_path
   end
 
   private
 
+  def set_opinion
+    @opinion = Opinion.find(params[:id])
+  end
+
   def opinion_params
     params.require(:opinion).permit(:Text)
+  end
+
+  def require_same_user
+    if current_user != @opinion.Author
+      flash[:danger] = "You can only edit or delete your own review"
+      redirect_to root_path
+    end
   end
 end
