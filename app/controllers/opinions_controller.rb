@@ -1,7 +1,7 @@
 class OpinionsController < ApplicationController
   before_action :authorize, only: %i[index]
-  before_action :set_opinion, only: [:edit, :update, :destroy]
-  before_action :require_same_user, only: [:edit, :update, :destroy]
+  before_action :set_opinion, only: %i[edit update destroy]
+  before_action :require_same_user, only: %i[edit update destroy]
 
   def index
     @opinion = Opinion.new
@@ -23,8 +23,7 @@ class OpinionsController < ApplicationController
     redirect_to root_path
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @opinion.update(opinion_params)
@@ -53,7 +52,7 @@ class OpinionsController < ApplicationController
 
   def require_same_user
     if current_user != @opinion.Author
-      flash[:danger] = "You can only edit or delete your own review"
+      flash[:danger] = 'You can only edit or delete your own review'
       redirect_to root_path
     end
   end

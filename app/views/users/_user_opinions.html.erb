@@ -6,11 +6,11 @@
         <%= profile_photo(opinion) %>  
       </div>
     </div>
-    <div class="user-content">
+    <div class="user-content mb-4">
     <p class="time"><%= time_ago_in_words(opinion.created_at) %></p> 
       <h4><%= opinion.Author.Fullname.titleize %></h4>
       <span><%= opinion.Text %></span>
-      <span class="like col my-flex justify-content-end">
+      <span class="like col my-flex justify-content-end p-0 m-0">
         <% if opinion.likes.any? { |like| like.UserId == current_user.id }%>
           <%= link_to unlike_path(opinion), method: :delete, class: 'user' do %>
             <i class="fas fa-heart text-danger"></i>
