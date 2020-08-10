@@ -10,6 +10,6 @@ module OpinionsHelper
   end
 
   def delete_opinion_button(opinion)
-    link_to '', opinion_path(opinion), method: :delete, class: 'fa fa-trash mx-2'
+    link_to '', opinion_path(opinion), method: :delete, data: { confirm: "Are you sure you want to delete the review?" }, class: 'fa fa-trash mx-2'
   end
 end

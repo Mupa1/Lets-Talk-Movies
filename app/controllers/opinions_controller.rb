@@ -1,6 +1,6 @@
 class OpinionsController < ApplicationController
   before_action :authorize, only: %i[index]
-  before_action :set_opinion, only: %i[edit update destroy]
+  before_action :set_opinion, only: %i[show edit update destroy]
   before_action :require_same_user, only: %i[edit update destroy]
 
   def index
@@ -23,11 +23,13 @@ class OpinionsController < ApplicationController
     redirect_to root_path
   end
 
+  def show; end
+
   def edit; end
 
   def update
     if @opinion.update(opinion_params)
-      flash[:notice] = 'Your movie review was updated'
+      flash[:success] = 'Your movie review was updated'
       redirect_to opinion_path(@opinion)
     else
       render :edit
