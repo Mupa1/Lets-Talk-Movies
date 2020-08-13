@@ -27,12 +27,12 @@ module ApplicationHelper
   end
 
   def follow_unfollow(user)
-    unless current_user.id == user.id
-      if current_user.followed.any? { |person| person.FollowedId == user.id }
-        render partial: 'users/unfollow_button', locals: { user: user }
-      else
-        render partial: 'users/follow_button', locals: { user: user }
-      end
+    return if current_user.id == user.id
+
+    if current_user.followed.any? { |person| person.FollowedId == user.id }
+      render partial: 'users/unfollow_button', locals: { user: user }
+    else
+      render partial: 'users/follow_button', locals: { user: user }
     end
   end
 

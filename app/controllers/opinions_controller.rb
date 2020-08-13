@@ -53,9 +53,9 @@ class OpinionsController < ApplicationController
   end
 
   def require_same_user
-    if current_user != @opinion.Author
-      flash[:danger] = 'You can only edit or delete your own review'
-      redirect_to root_path
-    end
+    return unless current_user != @opinion.Author
+
+    flash[:danger] = 'You can only edit or delete your own review'
+    redirect_to root_path
   end
 end
