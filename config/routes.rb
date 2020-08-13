@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :users, except: [:new]
-  resources :opinions
+  resources :opinions do
+    resources :likes, only: %i[create destroy]
+  end
 
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
@@ -9,7 +11,5 @@ Rails.application.routes.draw do
 
   get '/follow/:followed_id', to: 'followings#create', as: :follow
   delete '/:followed_id', to: 'followings#destroy', as: :unfollow
-  get '/like/:opinion_id', to: 'likes#create', as: :like
-  delete '/unlike/:opinion_id', to: 'likes#destroy', as: :unlike
   root 'opinions#index'
 end

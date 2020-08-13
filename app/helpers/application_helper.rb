@@ -35,4 +35,16 @@ module ApplicationHelper
       end
     end
   end
+
+  def like_unlike(opinion)
+    if opinion.likes.any? { |like| like.UserId == current_user.id }
+      link_to opinion_like_path(opinion, opinion.likes.ids), method: :delete, remote: true, class: 'user-1' do
+        render partial: 'shared/unlikes', locals: { opinion: opinion }
+      end
+    else
+      link_to opinion_likes_path(opinion), method: :post, remote: true, class: 'user-2' do
+        render partial: 'shared/likes', locals: { opinion: opinion }
+      end
+    end
+  end
 end

@@ -22,4 +22,12 @@ module UsersHelper
       image_tag @user.Photo.medium.url
     end
   end
+
+  def follower_pic(follower)
+    if follower.Follower[:Photo].nil?
+      gravatar_for follower.Follower, size: 50
+    else
+      image_tag follower.Follower.Photo.thumb.url, class: 'photo'
+    end
+  end
 end

@@ -5,11 +5,8 @@
     <div class="main-body">
     <div class="opinions">
       <div class="opinion-form">
-        <%# <%= render 'form' %>
         <section class="opinion-body">
         <h1 class="opinion-body-header">MOVIE REVIEW</h1>
-
-        
           <div class="opinion-avatar">
             <div class="picture">
               <%= profile_photo(@opinion) %>
@@ -20,15 +17,7 @@
             <h5><%= @opinion.Author.Fullname.titleize %></h5>
             <span><%= sanitize @opinion.Text %></span>
               <span class="like col my-flex justify-content-end p-0 m-o">
-                <% if @opinion.likes.any? { |like| like.UserId == current_user.id }%>
-                  <%= link_to unlike_path(@opinion), method: :delete, class: 'user-1' do %>
-                    <i class="fas fa-heart text-danger"></i>
-                  <% end %>
-                <% else %>
-                  <%= link_to like_path(@opinion), class: 'user-2' do %>
-                    <i class="fas fa-heart"></i>
-                  <% end %>
-                <% end %>
+                <p><%= like_unlike(@opinion) %> </p>
                 <p><%= opinion_like_count(@opinion) %></p>
                 <p><%= edit_opinion_button(@opinion) %></p>
                 <p><%= delete_opinion_button(@opinion) %></p>

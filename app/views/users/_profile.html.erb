@@ -33,11 +33,7 @@
     <% @followers.each do |follower| %>
       <div class="follower-profile">
         <div class="follower-avatar my-flex picture">
-          <% unless follower.Follower[:Photo].nil? %>
-            <%= image_tag follower.Follower.Photo.thumb.url, class: "photo" %>
-          <% else %>
-            <%= gravatar_for follower.Follower, size: 50 %>
-          <% end %>
+          <%= follower_pic(follower) %>
           <div>
             <h5><%= follower.Follower.Fullname.titleize %></h5>
             <p>@<%= follower.Follower.Username %> </p>
