@@ -1,0 +1,4 @@
+<%= form_with(model: @opinion, local: true)  do |f| %>
+  <%= f.text_area :Text, class: "text-input", placeholder: "Compose new..." %>
+  <%= f.submit "POST", class: "text-btn pull-right" %>
+<% end %>

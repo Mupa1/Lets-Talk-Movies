@@ -1,0 +1,17 @@
+<div class="main-content mt-0 pt-0">
+  <%= render 'shared/side_nav' %>
+  <main>
+    <%= render 'shared/navigation' %>
+    <div class="main-body">
+    <div class="opinions">
+      <div class="opinion-form">
+        <h1 class="compose-new">Editing Opinion</h1>
+        <%= render 'form' %>
+      </div>
+    </div>
+    <%= render 'who_to_follow'%>
+  </div>
+  <%= link_to 'Back', root_path %> 
+  </main>
+</div>
+

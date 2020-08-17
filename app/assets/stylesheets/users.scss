@@ -1,0 +1,148 @@
+.user-body {
+  margin: 2rem 0 0 2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  width: 95%;
+  padding: 1rem;
+}
+
+.user-body-header {
+  border-bottom: 2px solid #e7ebee;
+  padding: 1rem 0 1.5rem 0;
+}
+
+.user-avatar {
+  float: left;
+  margin: 0 1rem 2rem 0;
+}
+
+.user-content {
+  border-bottom: 1px solid #e7ebee;
+}
+
+.user-content span {
+  font-size: 1.2rem;
+}
+
+.user-content h4 {
+  font-size: 1.5rem;
+  margin-bottom: -0.1rem;
+  font-weight: bold;
+}
+
+.clear {
+  clear: both;
+}
+
+.user-profile {
+  border-left: 2px solid #e7ebee;
+
+  .main-photo-box {
+    min-width: 70px;
+    min-height: 70px;
+    max-width: 70px;
+    max-height: 70px;
+    object-fit: cover;
+  }
+
+  .follow-icon {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .space-icon {
+    margin-right: 1.5rem;
+  }
+
+  .follow-icon img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+
+  .profile-details h5 {
+    font-weight: bold;
+    margin-bottom: -0.1rem;
+    margin-top: 2.5rem;
+    color: #333;
+  }
+
+  .user-stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.7rem;
+    border-top: 1px solid #e2e3e5;
+    border-bottom: 1px solid #e2e3e5;
+  }
+
+  .following-stat {
+    padding: 0 1rem;
+    border-right: 1px solid #e2e3e5;
+    border-left: 1px solid #e2e3e5;
+  }
+
+  .opinion-stat {
+    padding-right: 1rem;
+  }
+
+  .followed-stat {
+    padding-left: 1rem;
+  }
+
+  .stat-no {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: -0.3rem;
+    padding-top: 1rem;
+  }
+
+  .stat-name {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .followers-section {
+    margin-left: 2rem;
+  }
+
+  .followers-header {
+    padding-top: 3rem;
+    border-bottom: 1px solid #e2e3e5;
+  }
+
+  .follower-profile {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .follower-profile h5 {
+    font-weight: bold;
+    margin-bottom: -0.3rem;
+  }
+
+  .follower-avatar img {
+    margin-right: 1rem;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+  }
+
+  .follow-icons {
+    margin-right: 1rem;
+  }
+}
+
+.cover-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}

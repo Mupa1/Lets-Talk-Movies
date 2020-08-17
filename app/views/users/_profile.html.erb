@@ -1,0 +1,55 @@
+<section  class="user-profile">
+  <article class="profile-container">
+    <div class="follow-icon">
+      <%= follow_unfollow(@user) %>
+      <div class="main-photo-box">
+        <%= profile_pic_big %>
+      </div>
+    </div>
+    <div class="profile-details text-center">
+      <h5><%= @user.Fullname.titleize %></h5>
+      <p>@<%= @user.Username %></p>
+    </div> 
+  </article>
+  <article class="user-stat">
+    <div class="opinion-stat">
+      <p class="stat-no"><%= @opinions.size %></p>
+      <p class="stat-name">Posts</p>
+    </div>
+    <div class="following-stat">
+      <p class="stat-no"><%= @user.followed.size %></p>
+      <p class="stat-name">Following</p>
+    </div>
+    <div class="followed-stat">
+      <p class="stat-no"><%= @user.followers.size %></p>
+      <p class="stat-name">Followers</p>
+    </div>
+  </article>
+  <article class="followers-section">
+  <div class="followers-header">
+    <p>FOLLOWED BY</p>
+  </div>
+  <div class="my-followers">
+    <% @followers.each do |follower| %>
+      <div class="follower-profile">
+        <div class="follower-avatar my-flex picture">
+          <%= follower_pic(follower) %>
+          <div>
+            <h5><%= follower.Follower.Fullname.titleize %></h5>
+            <p>@<%= follower.Follower.Username %> </p>
+          </div>
+        </div>
+        <% if current_user.followed.any? { |person| person.FollowedId == follower.Follower.id }%>
+          <%= link_to unfollow_path(follower.Follower), method: :delete, class: "follow-icons" do %>
+              <i class="fas fa-minus-circle fa-2x text-muted"></i>
+          <% end %>
+        <%else%>
+          <%= link_to follow_path(follower.Follower), class: "follow-icons" do %>
+            <i class="fas fa-plus-circle fa-2x text-muted"></i>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</article>
+</section>

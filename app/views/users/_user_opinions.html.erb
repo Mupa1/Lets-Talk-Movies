@@ -1,0 +1,22 @@
+<article class="user-body">
+  <h1 class="user-body-header">ALL REVIEWS</h1>
+  <% @opinions.each do |opinion| %>
+    <div class="user-avatar">
+      <div class="picture">
+        <%= profile_photo(opinion) %>  
+      </div>
+    </div>
+    <div class="user-content mb-4">
+    <p class="time"><%= time_ago_in_words(opinion.created_at) %></p> 
+      <h4><%= opinion.Author.Fullname.titleize %></h4>
+      <span><%= opinion.Text %></span>
+      <span class="like col my-flex justify-content-end p-0 m-0">
+        <p><%= like_unlike(opinion) %> </p>
+        <p><%= opinion_like_count(opinion) %></p>
+        <%= edit_opinion_button(opinion) %>
+        <%= delete_opinion_button(opinion) %>
+    </span>
+      <div class="clear"></div>
+    </div>
+  <% end %>
+</article>
