@@ -1,0 +1,18 @@
+<%= render 'shared/navigation' %>
+<h1 class="text-center">Log In</h1>
+<div class="center-form">
+  <%= form_for (:session), :url => login_path, :html => {class: "signup-form"} do |f| %>
+    <div class="form-label">
+      <%= f.label :Username, class: "username-label" %>
+    </div>
+    <div class="form-input">
+      <%= f.text_field :Username, class: "username-input", placeholder: "Enter Username" %>
+    </div>
+    <div class="form-actions">
+      <%= f.submit "Log In",  class: "signup-btn"%>    
+    </div>
+  <% end %>
+  <div class="text-center">
+    <%= link_to "Don't have an account? Sign Up", signup_path %>
+  </div>
+</div>

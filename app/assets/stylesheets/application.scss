@@ -1,0 +1,69 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f6f8;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+}
+
+input {
+  background-color: #fff;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+li {
+  list-style: none;
+}
+
+.my-flex {
+  display: flex;
+}
+
+.navbar {
+  height: 6rem;
+  background-color: #50a4e2;
+}
+
+.alert {
+  margin-bottom: 0;
+  position: absolute;
+  right: 35%;
+  width: 30%;
+  text-align: center;
+}
+
+.nav-bar {
+  background-color: #50a4e2;
+  height: 6rem;
+}
+
+.like p {
+  padding-left: 0.5rem;
+}

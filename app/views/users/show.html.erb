@@ -1,0 +1,15 @@
+<div class="main-content">
+  <%= render 'shared/side_nav' %>
+  <main>
+    <%= render 'shared/navigation' %>
+    <div class="main-user-body">
+      <section class="user-opinion">
+        <article class="cover-img">
+          <%= cover_image %>
+        </article>
+        <%= render 'users/user_opinions' %>
+      </section>
+    <%= render 'users/profile' %>
+    </div>
+  </main>
+</div>

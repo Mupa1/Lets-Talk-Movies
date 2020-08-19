@@ -1,0 +1,292 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
+
+.who-follow-profile h5 {
+  padding-left: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.who-follow-profile a {
+  color: #333;
+}
+
+.who-follow-profile p {
+  padding-left: 1rem;
+  color: #63758b;
+  font-size: 12px;
+  margin-top: -1rem;
+}
+
+.cover-img img {
+  display: block;
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+}
+
+.who-follow-profile img {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+}
+
+.picture img {
+  max-width: 50px;
+  max-height: 50px;
+  min-height: 50px;
+  min-width: 50px;
+  object-fit: cover;
+}
+
+.side-nav {
+  background-color: #213246;
+
+  .current-user {
+    padding: 1rem 0 3rem 0;
+  }
+
+  .current-user img {
+    margin: 1rem 0 1rem 2rem;
+  }
+
+  .current-user h6 {
+    padding: 1.5rem 0 0 2.5rem;
+    color: #667b90;
+  }
+
+  .follow {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5rem;
+  }
+
+  .stats {
+    margin-right: 2rem;
+  }
+
+  .stat-name {
+    color: #667b90;
+  }
+
+  .stat-count {
+    padding-left: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+
+  .side-links {
+    padding: 1rem 0 0;
+    width: 100%;
+  }
+
+  .links {
+    padding: 1rem 0 1rem 2.5rem;
+    color: #667b90;
+  }
+
+  .links i {
+    padding-right: 1rem;
+  }
+
+  .active,
+  .links:hover {
+    color: white;
+    background-color: #50a4e2;
+  }
+
+  .links-path:hover {
+    color: white;
+    background-color: #50a4e2;
+  }
+}
+
+.logo {
+  padding: 1rem 2rem;
+}
+
+.center-form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.signup-form {
+  padding: 1rem;
+}
+
+.signup-btn {
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: #50a4e2;
+  padding: 1.4rem;
+  font-weight: bolder;
+  border: none;
+  color: #fff;
+  font-size: 1.7rem;
+}
+
+.username-label,
+.fullname-label,
+.cover-label,
+.photo-label {
+  background-color: #fff;
+  width: 100%;
+  margin-bottom: 0;
+  color: #7c7786;
+}
+
+.username-input,
+.fullname-input,
+.cover-input,
+.photo-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #50a4e2;
+  height: 4rem;
+  margin-bottom: 2.5rem;
+  padding-left: 0.4rem;
+}
+
+#user_Photo,
+#user_CoverImage {
+  padding: 1rem;
+  border: 0;
+  border-bottom: 1px solid #50a4e2;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 2px solid #50a4e2;
+}
+
+#user_Photo:focus,
+#user_CoverImage:focus {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #50a4e2;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-gap: 0;
+  min-height: 100vh;
+}
+
+.main-body {
+  padding-left: 2rem;
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-gap: 0;
+  min-height: 100vh;
+
+  .opinion-form {
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 98%;
+    padding: 1.5rem 1.5rem 5rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .compose-new {
+    font-weight: bold;
+  }
+
+  .text-input {
+    width: 100%;
+    padding: 1rem 1rem 0;
+    border-radius: 5px;
+  }
+
+  .text-btn {
+    padding: 1rem 2rem;
+    color: white;
+    background-color: #50a4e2;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .opinion-body {
+    margin-top: 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 98%;
+    padding: 2rem;
+  }
+
+  .opinion-body-header {
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #e7ebee;
+    color: #50a4e2;
+    font-weight: bold;
+  }
+
+  .opinion-avatar {
+    float: left;
+    margin: 0 1rem 2rem 0;
+  }
+
+  .opinion-content {
+    border-bottom: 1px solid #e7ebee;
+  }
+
+  .opinion-content span {
+    font-size: 1.2rem;
+    color: #63758b;
+  }
+
+  .opinion-content h5 {
+    margin-bottom: -0.2rem;
+    font-weight: bold;
+  }
+
+  .clear {
+    clear: both;
+  }
+}
+
+aside {
+  border-left: 2px solid #e7ebee;
+  padding-left: 2rem;
+
+  .follow-header {
+    padding-top: 2rem;
+    border-bottom: 2px solid #e7ebee;
+    margin-bottom: 1rem;
+  }
+
+  .who-follow-profile {
+    margin: 0 1rem 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .user {
+    display: flex;
+  }
+
+  .photo {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+}
+
+.main-user-body {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-gap: 0;
+  min-height: 100vh;
+}
+
+.time {
+  float: right;
+  color: #333;
+  font-size: 1.3rem;
+}

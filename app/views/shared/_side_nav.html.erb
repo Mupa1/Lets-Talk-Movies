@@ -1,0 +1,38 @@
+<section class="side-nav">
+  <div class="current-user my-flex">
+    <div class="picture">
+      <%= profile_pic %>
+    </div>
+    <h6><%= current_user.Fullname.upcase %></h6>
+  </div>
+  <div class="follow my-flex">
+    <div class="following-stat-side">
+      <div class="stats">
+        <p class="stat-count"><%= current_user.followed.size %></p>
+        <p class="stat-name">Following</p>
+      </div>
+    </div>
+    <div class="followed-stat-side">
+      <div class="stats">
+        <p class="stat-count"><%= current_user.followers.size %></p>
+        <p class="stat-name">Followers</p>
+      </div>
+    </div>
+  </div>
+  <nav>
+  <ul class="side-links">
+    <li class="home-link links">
+      <i class="fas fa-home"></i>
+      <%= link_to 'HOME', root_path, class: "links-path" %>
+    </li>
+    <li class="profile-link links">
+      <i class="fas fa-user"></i>
+      <%= link_to 'PROFILE', user_path(current_user), class: "links-path" %>
+    </li>
+    <li class="logout-link links">
+      <i class="fas fa-power-off"></i>
+      <%= link_to 'LOGOUT', logout_path, method: :delete, class: "links-path" %>
+    </li>
+  </ul>
+  </nav>
+</section>

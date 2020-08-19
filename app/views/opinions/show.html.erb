@@ -1,0 +1,35 @@
+<div class="main-content mt-0 pt-0">
+  <%= render 'shared/side_nav' %>
+  <main>
+    <%= render 'shared/navigation' %>
+    <div class="main-body">
+    <div class="opinions">
+      <div class="opinion-form">
+        <section class="opinion-body">
+        <h1 class="opinion-body-header">MOVIE REVIEW</h1>
+          <div class="opinion-avatar">
+            <div class="picture">
+              <%= profile_photo(@opinion) %>
+            </div>
+          </div>
+          <div class="opinion-content mb-4">
+          <p class="time"><%= time_ago_in_words(@opinion.created_at) %></p> 
+            <h5><%= @opinion.Author.Fullname.titleize %></h5>
+            <span><%= sanitize @opinion.Text %></span>
+              <span class="like col my-flex justify-content-end p-0 m-o">
+                <p><%= like_unlike(@opinion) %> </p>
+                <p><%= opinion_like_count(@opinion) %></p>
+                <p><%= edit_opinion_button(@opinion) %></p>
+                <p><%= delete_opinion_button(@opinion) %></p>
+            </span>
+          </div>
+          <div class="clear"></div>
+          <%= link_to 'Back', root_path %> 
+      </section>
+      </div>
+    </div>
+    <%= render 'who_to_follow'%>
+  </div>
+  </main>
+</div>
+

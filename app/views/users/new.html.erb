@@ -1,0 +1,38 @@
+<%= render 'shared/navigation' %>
+<%= render 'shared/errors', obj: @user %>
+<h1 class="text-center">Create Account</h1>
+
+<div class="center-form">
+<%= form_for (@user), :url => users_path, :html => {class: "signup-form", multipart: true} do |f| %>
+  <div class="form-label">
+    <%= f.label :Username, class: "username-label" %>
+  </div>
+  <div class="form-input">
+    <%= f.text_field :Username, class: "username-input", placeholder: "Enter Username" %>
+  </div>
+  <div class="form-label">
+    <%= f.label :Fullname, class: "fullname-label" %>
+  </div>
+  <div class="form-input">
+    <%= f.text_field :Fullname, class: "fullname-input", placeholder: "Enter Fullname" %>
+  </div>
+  <div class="form-label">
+    <%= f.label :Photo, class: "photo-label" %>
+  </div>
+  <div class="form-input">
+    <%= f.file_field :Photo, class: "photo-input text-center" %>
+  </div>
+  <div class="form-label">
+    <%= f.label :CoverImage, class: "cover-label" %>
+  </div>
+  <div class="form-input">
+    <%= f.file_field :CoverImage, class: "cover-input text-center" %>
+  </div>
+  <div class="form-actions">
+    <%= f.submit "Sign Up",  class: "signup-btn"%>    
+  </div>
+<% end %>
+<div class="text-center">
+  <%= link_to "Already have an account? Log In", login_path %>
+</div>
+</div>

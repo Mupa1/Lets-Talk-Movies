@@ -1,0 +1,29 @@
+<aside class="who-follow">
+  <div class="follow-header">
+    <p>WHO TO FOLLOW</p>
+  </div>
+  <div class="find-friends">
+    <% current_user.follow_suggestions.each do |user| %>
+      <div class="who-follow-profile">
+        <div class="my-flex picture">
+          <%= user_pic(user) %>
+          <div class="profile-details">
+            <h5><%= link_to user.Fullname.titleize, user_path(user) %></h5>
+            <p>@<%= user.Username %></p>
+          </div> 
+        </div>
+        <div>
+          <% if current_user.followed.any? { |person| person.FollowedId == user.id }%>
+            <%= link_to unfollow_path(user), method: :delete, class: "follow-icons" do %>
+              <i class="fas fa-minus-circle fa-2x text-muted"></i>
+            <% end %>
+          <%else%>
+            <%= link_to follow_path(user), class: "follow-icons" do %>
+              <i class="fas fa-plus-circle fa-2x text-muted"></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</aside>
