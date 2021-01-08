@@ -1,6 +1,6 @@
 # Lets Talk Movies
 
-A Desktop Social Media Web App for connecting Movie fans. Fans can post their opinions about movies or series they've watched, like opinions, follow their friends or other users whose content they enjoy consuming.
+This project is a desktop social media web App for connecting Movie fans. Fans can post their opinions about movies or series they've watched, like opinions, follow their friends or other users whose content they enjoy consuming.
 
 ## Screenshots
 #### Homepage
@@ -12,10 +12,6 @@ A Desktop Social Media Web App for connecting Movie fans. Fans can post their op
 ## Live Demo
 
 [Heroku App Link](https://lets-talk-movies.herokuapp.com/)
-
-## Video Presentation
-
-[Link to video presentation]()
 
 ## Project Specification
 
@@ -45,7 +41,7 @@ To get a local copy up and running follow these steps:
 ### Usage
 
 - Fork/Clone this project to your local machine
-- Open folder in your local enviroment and run these lines of code to get started:
+- Open the folder in your local environment and run these lines of code to get started:
 
 Install gems with:
 
@@ -62,9 +58,9 @@ Setup database with:
     rails db:migrate
 ```
 
-Setup cloudinary:
+Setup Cloudinary:
 
-- Goto `cloudinary.com` setup your account and get your cloudinary credentials.
+- Goto `cloudinary.com` setup your account and get your Cloudinary credentials.
 - Add the credentials to the `config/application.yml` like this :
 ```
 CLOUDINARY_NAME: "YOUR_CLOUDINARY_NAME"
@@ -89,8 +85,8 @@ Then open a web page and go to [port 3000 on your local machine.](http://localho
 
 ### Deployment
 
-The application was deployed on heroku.
-To deploy your own copy, you can follow the following [steps:](https://devcenter.heroku.com/articles/git)
+The application was deployed on Heroku.
+To deploy your copy, you can follow the following [steps:](https://devcenter.heroku.com/articles/git)
 
 ## Author
 
@@ -112,7 +108,7 @@ Start by:
 - Run `git checkout -b your-branch-name`
 - Make your contributions
 - Push your branch up to your forked repository
-- Open a Pull Request with a detailed description to the development(or master if not available) branch of the original project for a review
+- Open a Pull Request with a detailed description of the development(or master if not available) branch of the original project for a review
 
 #### Feel free to also check the [issues](https://github.com/Mupa1/Lets-Talk-Movies/issues) page.
 
