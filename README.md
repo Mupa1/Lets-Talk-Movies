@@ -13,10 +13,6 @@ This project is a desktop social media web App for connecting Movie fans. Fans c
 
 [Heroku App Link](https://lets-talk-movies.herokuapp.com/)
 
-## Video Presentation
-
-[Link to video presentation]()
-
 ## Project Specification
 
 An MVP version of an app following [Design idea](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details) by Gregoire Vella on Behance.
